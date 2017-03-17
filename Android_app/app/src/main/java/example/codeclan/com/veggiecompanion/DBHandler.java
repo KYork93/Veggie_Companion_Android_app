@@ -1,5 +1,6 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -47,4 +48,37 @@ public class DBHandler extends SQLiteOpenHelper {
             + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_DESCRIPTION
             + " TEXT," + KEY_TYPE + " TEXT," + KEY_FAVOURITE + " BOOLEAN," + KEY_IMAGE
             + " TEXT" + ")";
+
+    //resources create
+    private static final String CREATE_TABLE_RESOURCES = "CREATE TABLE "
+            + TABLE_RESOURCES + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME
+            + " TEXT," + KEY_SOURCE + " TEXT," + KEY_DESCRIPTION + " TEXT," + KEY_FAVOURITE
+            + " BOOLEAN," + KEY_TYPE + " TEXT" + ")";
+
+    //favourites create
+    private static final String CREATE_TABLE_FAVOURITES = "CREATE TABLE "
+            + TABLE_FAVOURITES + "(" + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME
+            + " TEXT," + KEY_DESCRIPTION + " TEXT" + ")";
+
+    public DBHandler(Context context) {
+        super(context, DATABASE_NAME, null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(CREATE_TABLE_RESTAURANT);
+        db.execSQL(CREATE_TABLE_CRUELTY_FREE);
+        db.execSQL(CREATE_TABLE_RESOURCES);
+        db.execSQL(CREATE_TABLE_FAVOURITES);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESTAURANT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESOURCES);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FAVOURITES);
+
+        onCreate(db);
+    }
 }
