@@ -1,0 +1,41 @@
+name: Fanny The Foodie
+SRC: http://fannythefoodie.com/
+description: A blog which you will come across often with its inventive recipes using
+all sorts of ingredients, everything is vegan and she has tips and tricks and beautiful
+photographs of her dishes, the care really enhances her website.
+type: food
+
+name: Minimalist Baker
+src: http://minimalistbaker.com/
+description: Blog devoted to plant-based simplistic cooking with 10 ingredients or less.
+With their own recipe books they are a huge success in the vegan and GF world, they also
+have a regular posting schedule so be sure to have access to multiple new recipes every week.
+type: food
+
+name: mo'Adore
+src: http://www.moadore.co.uk/
+description: This Scottish blogger has dedicated her life to living cruelty free so be sure
+to find many tips on recipes and living ethically and sustainable in all aspects of life.  She
+also supports other aspects of the lifestyle like feminism and independent businesses.
+type: lifestyle
+
+name: The Tofu Diaries
+src: http://natalietamara.co.uk/
+description:  Natalie is dedicated to the cruelty free lifestyle posting restaurant reviews,
+and she also has hints and tips of travelling as a vegetarian/vegan.  She also lives her
+day to day life cruelty free and you can be sure to find out more on her blog.
+type: lifestyle
+
+name: The Tartan Carrot
+src: http://thetartancarrot.co.uk/
+description: The Tartan Carrot is a meetup group with meetups all over Scotland so it's a great
+resource for meeting new people with the same values as you.  They are a dedicated team to reviewing
+and researching places to eat which are Vegetarian and Vegan.
+type: food
+
+name: AccidentallyVeganUK
+src: https://www.facebook.com/accidentallyveganuk/
+description: This group is like an open source project where items which are not marked as Vegan
+but actually are vegan and available in the UK.  A lot of the products which are 'accidentally'
+vegan come as quite a shock!
+type: food
