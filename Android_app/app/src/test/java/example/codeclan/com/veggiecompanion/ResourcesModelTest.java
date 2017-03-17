@@ -11,7 +11,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class ResourcesModelTest {
 
-    ResourcesModel blog;
+    private ResourcesModel blog;
 
     @Before
     public void before(){
