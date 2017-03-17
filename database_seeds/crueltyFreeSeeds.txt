@@ -1,0 +1,27 @@
+name: NYX
+description: Nyx is an affordable make up brand who are increasing in popularity due to their
+cruelty free and mainly vegan status.  The quality of their make up is high and has not
+affected their price, their colours are highly pigmented and lipsticks last longer
+than the high end brands.
+type: cosmetics
+
+name: Lush
+description: This high street store specialises in making their own products, totally
+vegetarian with a lot of vegan products from bath bombs to make up.  There's something
+for everyone here and the staff are friendly, often you can ask for take away samples.
+They have now also opened spas.
+type: cosmetics
+
+name: Ecover
+description: This company produces household cleaning products from washing up liquid
+to bathroom cleaner using natural based products which will not harm the environment, no
+animal testing is involved they are stored in recycled plastic bottles and even the factory
+was build with ecology in mind.  To top it all of these products are available in most
+major supermarkets at inexpensive prices!
+type: household
+
+name: Superdrug
+description: Superdrugs own products from toothpaste to their makeup brand B. are all cruelty free,
+with labels marking suitability for vegetarians and vegans.  All of their products are very
+affordable and just as good as the brand names.
+type: cosmetics
