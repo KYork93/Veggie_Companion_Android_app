@@ -1,0 +1,44 @@
+name: Paradise Palms
+address: 41 Lothian St, Edinburgh EH1 1HB
+description: tropical house themed restaurant/cocktail bar with excellent vegan options,
+whole restaurant is vegetarian so you can be assured there's no kitchen contamination,
+2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.
+lat: 55.946272
+lng: -3.189225
+
+name: Henderson of Edinburgh
+address: 94 Hanover St, EH2 1DR
+description: multiple locations all over Edinburgh and a Deli Shop,
+organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.
+lat: 55.954245
+lng: -3.1981975999999577
+
+name: David Bann Restaurant
+address: 56-58 St Mary's St, EH1 1SX
+description: If you fancy a proper meal out this is where to go.
+David Bann's vegetarian restaurant is described as having creative and eclectic dishes.
+lat: 55.949539
+lng: -3.183425
+
+name: Zizzi's
+address:  42-45 Queensferry St, EH2 4RA
+description: Zizzi's is a national Italian chain restaurant paving the way with their vegan options.
+Somewhere you can go and there is an option for every that isn't just salad but inventive
+and exciting dishes.
+lat: 55.950563
+lng: -3.208798
+
+name: Kalpna
+address: 2-3 St Patrick Square, EH8 9EZ
+description: A family run vegetarian Indian restaurant sourcing their ingredients locally.
+They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!
+lat: 55.943451
+lng: -3.183052
+
+name: Novapizza Vegetarian Kitchen
+address: 42 Howe Street, EH3 6TH
+description: A favourite with students, and who doesn't love pizza?  This pizza place
+caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options
+So Coeliacs can get on the Italian deliciousness.
+lat: 55.956671
+lng: -3.202501
