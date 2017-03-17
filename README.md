@@ -45,4 +45,6 @@ Integration Testing
 <h3>Future Development</h3>
 iOS and web app
 
+<hr />
+
 *Kristie Yorkston*
