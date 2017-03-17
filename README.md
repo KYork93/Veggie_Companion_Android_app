@@ -2,10 +2,10 @@
 
 <h3>MVP</h3>
 4 page app with APIs and SQLite
--Home/Restaurants
--Cruelty Free
--Resources
--favourites
+<li>Home/Restaurants</li>
+<li>Cruelty Free</li>
+<li>Resources</li>
+<li>Favourites</li>
 
 <u><h4>Home/Restaurants</h4></u>
 
