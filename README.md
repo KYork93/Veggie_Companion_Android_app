@@ -1,8 +1,6 @@
 <h2>Veggie Companion</h2>
-------------
 
 <h3>MVP</h3>
--------
 4 page app with APIs and SQLite
 -Home/Restaurants
 -Cruelty Free
