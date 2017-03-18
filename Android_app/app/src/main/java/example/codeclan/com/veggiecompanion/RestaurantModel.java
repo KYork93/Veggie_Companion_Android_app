@@ -1,12 +1,15 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.UserHandle;
 
 /**
  * Created by user on 17/03/2017.
  */
 
-public class RestaurantModel {
+public class RestaurantModel extends Context {
 
     public String name;
     public String address;
@@ -72,5 +75,11 @@ public class RestaurantModel {
         this.lng = lng;
     }
 
+    public void getExternalCacheDir(){
+
+    }
+
+    public void sendBroadcastAsUser(Intent intent , UserHandle user){}
+    public void  getApplicationContext(){}
 
 }

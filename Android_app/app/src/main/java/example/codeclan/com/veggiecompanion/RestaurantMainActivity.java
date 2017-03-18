@@ -3,6 +3,8 @@ package example.codeclan.com.veggiecompanion;
 import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -15,9 +17,12 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 
+import org.w3c.dom.Text;
+
 public class RestaurantMainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap mGoogleMap;
+    ListView restaurantList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,5 +69,19 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         LatLng ll = new LatLng(lat, lng);
         CameraUpdate update = CameraUpdateFactory.newLatLngZoom(ll, zoom);
         mGoogleMap.moveCamera(update);
+    }
+
+    public void returnAllRestaurants(){
+        DBHandler db = new DBHandler(this);
+
+
+    }
+
+    public void addToRestaurantDB(){
+        DBHandler db = new DBHandler(this);
+
+        db.createRestaurantTable(new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
+                "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
+                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", false, 55.946272, -3.189225));
     }
 }
