@@ -1,8 +1,11 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import static android.R.attr.id;
 
 /**
  * Created by user on 17/03/2017.
@@ -81,4 +84,21 @@ public class DBHandler extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
+    public void createRestaurantTable(RestaurantModel restaurant){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, restaurant.getName());
+        values.put(KEY_ADDRESS, restaurant.getAddress());
+        values.put(KEY_DESCRIPTION, restaurant.getDescription());
+        values.put(KEY_FAVOURITE, restaurant.isFavourite());
+        values.put(KEY_LAT, restaurant.getLat());
+        values.put(KEY_LNG, restaurant.getLng());
+
+        long restaurant_id = db.insert(TABLE_RESTAURANT, null, values);
+
+        db.close();
+    }
+
 }

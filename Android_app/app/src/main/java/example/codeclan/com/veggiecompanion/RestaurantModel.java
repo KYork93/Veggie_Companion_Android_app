@@ -1,5 +1,7 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.database.sqlite.SQLiteDatabase;
+
 /**
  * Created by user on 17/03/2017.
  */
@@ -69,4 +71,6 @@ public class RestaurantModel {
     public void setLng(int lng) {
         this.lng = lng;
     }
+
+
 }
