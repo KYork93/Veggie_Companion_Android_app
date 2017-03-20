@@ -35,7 +35,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(googleServicesAvailable()){
-            Toast.makeText(this, "connected", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Connected.", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.activity_restaurants_main);
             initMap();
         } else {
@@ -96,7 +96,9 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
         restaurantList = (ListView) findViewById(R.id.restaurant_list);
 
-        restaurantList.setAdapter(new RestaurantAdapter(this, R.id.allOfIt, allRestaurants));
+        RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.allOfIt, allRestaurants);
+
+        restaurantList.setAdapter(adapter);
     }
 
 }
