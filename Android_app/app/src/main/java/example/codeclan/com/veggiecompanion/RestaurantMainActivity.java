@@ -34,8 +34,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         } else {
             //No google maps layout
         }
-
-
     }
 
     private void initMap() {

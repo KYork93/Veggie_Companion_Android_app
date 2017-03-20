@@ -1,9 +1,6 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.content.Context;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.UserHandle;
 
 /**
  * Created by user on 17/03/2017.
@@ -11,20 +8,34 @@ import android.os.UserHandle;
 
 public class RestaurantModel extends Context {
 
+    public int id;
     public String name;
     public String address;
     public String description;
-    public boolean favourite;
+    public int favourite;
     public double lat;
     public double lng;
 
-    public RestaurantModel(String name, String address, String description, boolean favourite, double lat, double lng) {
+    public RestaurantModel(){
+
+    }
+
+    public RestaurantModel(int id, String name, String address, String description, int favourite, double lat, double lng) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.description = description;
         this.favourite = favourite;
         this.lat = lat;
         this.lng = lng;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -51,11 +62,11 @@ public class RestaurantModel extends Context {
         this.description = description;
     }
 
-    public boolean isFavourite() {
+    public int isFavourite() {
         return favourite;
     }
 
-    public void setFavourite(boolean favourite) {
+    public void setFavourite(int favourite) {
         this.favourite = favourite;
     }
 
@@ -74,12 +85,5 @@ public class RestaurantModel extends Context {
     public void setLng(int lng) {
         this.lng = lng;
     }
-
-    public void getExternalCacheDir(){
-
-    }
-
-    public void sendBroadcastAsUser(Intent intent , UserHandle user){}
-    public void  getApplicationContext(){}
 
 }

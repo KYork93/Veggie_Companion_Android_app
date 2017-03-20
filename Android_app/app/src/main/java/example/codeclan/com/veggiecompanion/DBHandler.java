@@ -2,8 +2,10 @@ package example.codeclan.com.veggiecompanion;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by user on 17/03/2017.
@@ -75,7 +77,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESTAURANT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESOURCES);
@@ -98,6 +100,33 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(TABLE_RESTAURANT, null, values);
 
         db.close();
+    }
+
+    public RestaurantModel getRestaurant(long restaurant_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selectQuery = "SELECT * FROM " + TABLE_RESTAURANT + " WHERE "
+                + KEY_ID + " = " + restaurant_id;
+
+        Log.e("select query", selectQuery);
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor != null){
+            cursor.moveToFirst();
+        }
+
+        RestaurantModel restaurant = new RestaurantModel();
+
+        restaurant.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
+        restaurant.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+        restaurant.setAddress(cursor.getString(cursor.getColumnIndex(KEY_ADDRESS)));
+        restaurant.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
+        restaurant.setFavourite(cursor.getInt(cursor.getColumnIndex(KEY_FAVOURITE)));
+        restaurant.setLat(cursor.getInt(cursor.getColumnIndex(KEY_LAT)));
+        restaurant.setLng(cursor.getInt(cursor.getColumnIndex(KEY_LNG)));
+
+        return restaurant;
     }
 
 }
