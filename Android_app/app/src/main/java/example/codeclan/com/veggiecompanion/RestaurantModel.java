@@ -2,6 +2,7 @@ package example.codeclan.com.veggiecompanion;
 
 import android.content.Context;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
@@ -19,9 +20,7 @@ public class RestaurantModel {
     public int favourite;
     public double lat;
     public double lng;
-
-    private static DecimalFormat df = new DecimalFormat("0.0000000");
-
+    
     public RestaurantModel(){
 
     }
