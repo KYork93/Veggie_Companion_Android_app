@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Created by user on 20/03/2017.
  */
 
-public class FavouriteDBHandler extends SQLiteOpenHelper{
+public class FavouriteDBHandler extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "VeggieCompanion";
     private static final String TABLE_FAVOURITES = "favourites";
@@ -26,7 +26,7 @@ public class FavouriteDBHandler extends SQLiteOpenHelper{
             + TABLE_FAVOURITES + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
             + " VARCHAR," + KEY_DESCRIPTION + " TEXT" + ")";
 
-    public FavouriteDBHandler(Context context){
+    public FavouriteDBHandler(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
@@ -42,7 +42,7 @@ public class FavouriteDBHandler extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public void addFavouriteToFavourites(FavouriteModel favourite){
+    public void addFavouriteToFavourites(FavouriteModel favourite) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -54,8 +54,8 @@ public class FavouriteDBHandler extends SQLiteOpenHelper{
         db.close();
     }
 
-    public ArrayList<FavouriteModel> getAllFavourites(){
-        ArrayList<FavouriteModel> favourite = new ArrayList<FavouriteModel>();
+    public ArrayList<FavouriteModel> getAllFavourites() {
+        ArrayList<FavouriteModel> favourites = new ArrayList<FavouriteModel>();
         String selectQuery = "SELECT * FROM " + TABLE_FAVOURITES;
 
         Log.e("select all query", selectQuery);
@@ -63,12 +63,14 @@ public class FavouriteDBHandler extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
-                FavouriteModel favourites = new FavouriteModel();
-                favourites.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
-                favourites.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
-                favourites.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
-            } while(cursor.moveToNext());
+                FavouriteModel favourite = new FavouriteModel();
+                favourite.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
+                favourite.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+                favourite.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
+            } while (cursor.moveToNext());
+        }
+        return favourites;
     }
 }
