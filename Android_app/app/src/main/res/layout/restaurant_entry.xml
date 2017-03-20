@@ -14,5 +14,14 @@
         android:layout_height="match_parent"
         android:id="@+id/restaurant_address"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/restaurant_description"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rest_favourite"/>
 
 </LinearLayout>

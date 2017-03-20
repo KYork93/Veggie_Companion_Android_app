@@ -39,10 +39,12 @@ public class RestaurantAdapter extends ArrayAdapter {
 
         TextView view = (TextView)row.findViewById(R.id.restaurant_name);
         TextView restAddress = (TextView)row.findViewById(R.id.restaurant_address);
+        TextView restDesc = (TextView)row.findViewById(R.id.restaurant_description);
 
         RestaurantModel restaurant = data.get(position);
         view.setText(String.valueOf(restaurant.getName()));
         restAddress.setText(String.valueOf(restaurant.getAddress()));
+        restDesc.setText(restaurant.getDescription());
 
         return row;
     }
