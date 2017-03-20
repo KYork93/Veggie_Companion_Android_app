@@ -4,14 +4,31 @@ package example.codeclan.com.veggiecompanion;
  * Created by user on 17/03/2017.
  */
 
-public class FavouritesModel {
+public class FavouriteModel {
 
+    public int id;
     public String name;
     public String description;
 
-    public FavouritesModel(String name, String description) {
+    public FavouriteModel(){}
+
+    public FavouriteModel(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public FavouriteModel(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

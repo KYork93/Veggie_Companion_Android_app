@@ -9,13 +9,13 @@ import static junit.framework.Assert.assertEquals;
  * Created by user on 17/03/2017.
  */
 
-public class FavouritesModelTest {
+public class FavouriteModelTest {
 
-    private FavouritesModel favBlog;
+    private FavouriteModel favBlog;
 
     @Before
     public void before(){
-        favBlog = new FavouritesModel("VegLife", "veg food and stuff");
+        favBlog = new FavouriteModel("VegLife", "veg food and stuff");
     }
 
     @Test

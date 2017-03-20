@@ -1,8 +1,13 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by user on 20/03/2017.
@@ -37,5 +42,33 @@ public class FavouriteDBHandler extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    
+    public void addFavouriteToFavourites(FavouriteModel favourite){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, favourite.getName());
+        values.put(KEY_DESCRIPTION, favourite.getDescription());
+
+        db.insert(TABLE_FAVOURITES, null, values);
+
+        db.close();
+    }
+
+    public ArrayList<FavouriteModel> getAllFavourites(){
+        ArrayList<FavouriteModel> favourite = new ArrayList<FavouriteModel>();
+        String selectQuery = "SELECT * FROM " + TABLE_FAVOURITES;
+
+        Log.e("select all query", selectQuery);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                FavouriteModel favourites = new FavouriteModel();
+                favourites.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
+                favourites.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+                favourites.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
+            } while(cursor.moveToNext());
+    }
 }
