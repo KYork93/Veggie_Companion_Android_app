@@ -96,4 +96,9 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         }
         return favourites;
     }
+
+    public int deleteAllFavourites(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_FAVOURITES, null, null);
+    }
 }
