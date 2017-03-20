@@ -60,7 +60,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
             Dialog dialog = api.getErrorDialog(this, isAvailable, 0);
             dialog.show();
         } else {
-            Toast.makeText(this, "can't connect to play services", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Cannot connect to Google Play Services", Toast.LENGTH_LONG).show();
         }
 
         return false;
@@ -95,9 +95,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         }
 
         restaurantList = (ListView) findViewById(R.id.restaurant_list);
-
         RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.allOfIt, allRestaurants);
-
         restaurantList.setAdapter(adapter);
     }
 

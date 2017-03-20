@@ -24,6 +24,7 @@ public class RestaurantAdapter extends ArrayAdapter {
     public RestaurantAdapter(Context context, int textViewResourceId, ArrayList<RestaurantModel> data){
         super(context, textViewResourceId, data);
         this.context = context;
+        this.data = data;
     }
 
     @Override
