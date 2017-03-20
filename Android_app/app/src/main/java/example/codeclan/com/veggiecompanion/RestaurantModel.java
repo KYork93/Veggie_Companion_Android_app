@@ -22,6 +22,15 @@ public class RestaurantModel {
 
     }
 
+    public RestaurantModel(String name, String address, String description, int favourite, double lat, double lng) {
+        this.name = name;
+        this.address = address;
+        this.description = description;
+        this.favourite = favourite;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
     public RestaurantModel(int id, String name, String address, String description, int favourite, double lat, double lng) {
         this.id = id;
         this.name = name;

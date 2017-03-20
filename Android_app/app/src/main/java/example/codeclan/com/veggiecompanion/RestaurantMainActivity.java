@@ -1,8 +1,10 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.app.Dialog;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,10 +21,12 @@ import com.google.android.gms.maps.model.LatLng;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
 public class RestaurantMainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap mGoogleMap;
-    ListView restaurantList;
+    TextView restaurantList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         } else {
             //No google maps layout
         }
+
+        addToRestaurantDB();
     }
 
     private void initMap() {
@@ -69,17 +75,22 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         mGoogleMap.moveCamera(update);
     }
 
-    public void returnAllRestaurants(){
-        DBHandler db = new DBHandler(this);
-
-
-    }
 
     public void addToRestaurantDB(){
-        DBHandler db = new DBHandler(this);
+        DBHandler db = new DBHandler(getApplicationContext());
 
-        db.createRestaurantTable(new RestaurantModel(1, "Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
+        RestaurantModel pPalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
-                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225));
+                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
+
+        db.createRestaurantTable(pPalms);
+
+        List<RestaurantModel> allRestaurants = db.getAllRestaurants();
+
+        restaurantList = (TextView) findViewById(R.id.restaurant_list);
+
+        restaurantList.setText(allRestaurants);
+
     }
+
 }

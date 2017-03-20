@@ -105,6 +105,14 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void closeDB(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        if(db != null && db.isOpen()){
+            db.close();
+        }
+    }
+
+
     public RestaurantModel getRestaurant(long restaurant_id){
         SQLiteDatabase db = this.getReadableDatabase();
 
