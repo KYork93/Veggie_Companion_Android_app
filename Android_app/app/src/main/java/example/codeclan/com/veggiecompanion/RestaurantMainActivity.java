@@ -36,6 +36,9 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
             "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
     RestaurantModel hendersons = new RestaurantModel("Henderson of Edinburgh", "94 Hanover St, EH2 1DR", "multiple locations all over Edinburgh and a Deli Shop,\n" +
                                                 "organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.", 0, 55.954245, -3.1981975999999577);
+    RestaurantModel banns = new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go.\n" +
+                                "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         mGoogleMap = googleMap;
         goToLocation(55.95029, -3.205775, 14);
 
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(hendersons.getLat(), hendersons.getLng())));
 
@@ -95,8 +99,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
         db.addToRestaurantTable(ppalms);
         db.addToRestaurantTable(hendersons);
-        db.addToRestaurantTable(new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go.\n" +
-                "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425));
+        db.addToRestaurantTable(banns);
         db.addToRestaurantTable(new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +
                 "Somewhere you can go and there is an option for every that isn't just salad but inventive\n" +
                 "and exciting dishes.", 0, 55.950563, -3.208798));

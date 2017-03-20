@@ -20,7 +20,7 @@ public class RestaurantModel {
     public int favourite;
     public double lat;
     public double lng;
-    
+
     public RestaurantModel(){
 
     }
