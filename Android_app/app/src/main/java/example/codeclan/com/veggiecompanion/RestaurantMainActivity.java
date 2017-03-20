@@ -38,6 +38,15 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
                                                 "organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.", 0, 55.954245, -3.1981975999999577);
     RestaurantModel banns = new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go.\n" +
                                 "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425);
+    RestaurantModel  zizzi = new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +
+                                                   "Somewhere you can go and there is an option for every that isn't just salad but inventive\n" +
+                                                   "and exciting dishes.", 0, 55.950563, -3.208798);
+    RestaurantModel kalpna = new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally.\n" +
+            "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052);
+
+
+
+
 
 
     @Override
@@ -80,6 +89,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         mGoogleMap = googleMap;
         goToLocation(55.95029, -3.205775, 14);
 
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(kalpna.getLat(), kalpna.getLng())));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(zizzi.getLat(), zizzi.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(hendersons.getLat(), hendersons.getLng())));
@@ -100,11 +111,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         db.addToRestaurantTable(ppalms);
         db.addToRestaurantTable(hendersons);
         db.addToRestaurantTable(banns);
-        db.addToRestaurantTable(new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +
-                "Somewhere you can go and there is an option for every that isn't just salad but inventive\n" +
-                "and exciting dishes.", 0, 55.950563, -3.208798));
-        db.addToRestaurantTable(new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally.\n" +
-                "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052));
+        db.addToRestaurantTable(zizzi);
+        db.addToRestaurantTable(kalpna);
         db.addToRestaurantTable(new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place\n" +
                 "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options\n" +
                 "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501));
