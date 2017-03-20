@@ -140,8 +140,8 @@ public class DBHandler extends SQLiteOpenHelper {
         return restaurant;
     }
 
-    public List<RestaurantModel> getAllRestaurants(){
-        List<RestaurantModel> restaurants = new ArrayList<RestaurantModel>();
+    public ArrayList<RestaurantModel> getAllRestaurants(){
+        ArrayList<RestaurantModel> restaurants = new ArrayList<RestaurantModel>();
         String selectQuery = "SELECT * FROM " + TABLE_RESTAURANT;
 
         Log.e("select all query", selectQuery);
