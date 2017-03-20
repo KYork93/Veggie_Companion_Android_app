@@ -1,8 +1,6 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -19,5 +17,6 @@ public class FavouritesActivityPage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         textView = (TextView)findViewById(R.id.favourite_item);
+        textView.setText("awright");
     }
 }

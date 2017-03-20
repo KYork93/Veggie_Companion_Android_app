@@ -1,11 +1,13 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -26,6 +28,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
     GoogleMap mGoogleMap;
     ListView restaurantList;
+    Intent intent;
+
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                                                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
                                                   "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
@@ -142,5 +146,15 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.favourites_menu){
+            intent = new Intent(RestaurantMainActivity.this, FavouritesActivityPage.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
