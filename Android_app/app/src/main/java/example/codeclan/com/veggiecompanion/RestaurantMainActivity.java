@@ -35,7 +35,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
             "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
             "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
     RestaurantModel hendersons = new RestaurantModel("Henderson of Edinburgh", "94 Hanover St, EH2 1DR", "multiple locations all over Edinburgh and a Deli Shop,\n" +
-                                                "organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.", 0, 55.954245, -3.1981975999999577));
+                                                "organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.", 0, 55.954245, -3.1981975999999577);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         db.deleteAllRestaurant();
 
         db.addToRestaurantTable(ppalms);
-        db.addToRestaurantTable(
+        db.addToRestaurantTable(hendersons);
         db.addToRestaurantTable(new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go.\n" +
                 "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425));
         db.addToRestaurantTable(new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +

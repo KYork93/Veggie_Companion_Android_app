@@ -49,8 +49,4 @@ public class RestaurantAdapter extends ArrayAdapter {
         return row;
     }
 
-    public void addMarkersToMap(){
-
-    }
-
 }

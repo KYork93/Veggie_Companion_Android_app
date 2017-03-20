@@ -2,6 +2,8 @@ package example.codeclan.com.veggiecompanion;
 
 import android.content.Context;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by user on 17/03/2017.
  */
@@ -17,6 +19,8 @@ public class RestaurantModel {
     public int favourite;
     public double lat;
     public double lng;
+
+    private static DecimalFormat df = new DecimalFormat("0.0000000");
 
     public RestaurantModel(){
 
