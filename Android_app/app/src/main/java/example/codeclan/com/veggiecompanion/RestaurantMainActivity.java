@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -126,4 +128,10 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         restaurantList.setAdapter(adapter);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
 }

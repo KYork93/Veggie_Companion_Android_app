@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Veggie Companion</string>
+    <string name="home_menu">HOME</string>
+    <string name="favourites_menu">FAVOURITES</string>
 </resources>
