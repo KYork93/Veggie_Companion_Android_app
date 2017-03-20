@@ -22,7 +22,6 @@ public class FavouritesActivityPage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         textView = (TextView)findViewById(R.id.favourite_item);
-        textView.setText("awright");
     }
 
     @Override
@@ -40,4 +39,5 @@ public class FavouritesActivityPage extends AppCompatActivity{
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
