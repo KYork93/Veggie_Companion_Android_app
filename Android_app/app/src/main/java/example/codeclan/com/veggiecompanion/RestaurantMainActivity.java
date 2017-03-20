@@ -43,7 +43,9 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
                                                    "and exciting dishes.", 0, 55.950563, -3.208798);
     RestaurantModel kalpna = new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally.\n" +
             "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052);
-
+    RestaurantModel nova = new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place\n" +
+                                                 "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options\n" +
+                                                 "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501);
 
 
 
@@ -89,12 +91,12 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         mGoogleMap = googleMap;
         goToLocation(55.95029, -3.205775, 14);
 
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(nova.getLat(), nova.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(kalpna.getLat(), kalpna.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(zizzi.getLat(), zizzi.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(hendersons.getLat(), hendersons.getLng())));
-
     }
 
     private void goToLocation(double lat, double lng, float zoom) {
@@ -113,15 +115,11 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         db.addToRestaurantTable(banns);
         db.addToRestaurantTable(zizzi);
         db.addToRestaurantTable(kalpna);
-        db.addToRestaurantTable(new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place\n" +
-                "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options\n" +
-                "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501));
-
+        db.addToRestaurantTable(nova);
     }
 
     public void appendRestaurantsToView(){
         addToRestaurantDB();
-
         DBHandler db = new DBHandler(this);
 
         ArrayList<RestaurantModel> allRestaurants = db.getAllRestaurants();
