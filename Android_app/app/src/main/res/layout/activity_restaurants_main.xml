@@ -24,7 +24,10 @@
             android:layout_height="500dp"
             tools:context="example.codeclan.com.veggiecompanion.RestaurantMainActivity"
             tools:layout_editor_absoluteY="-7dp"
-            tools:layout_editor_absoluteX="55dp" />
+            tools:layout_editor_absoluteX="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <ListView
          android:id="@+id/restaurant_list"

@@ -91,8 +91,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         mGoogleMap = googleMap;
         goToLocation(55.95029, -3.205775, 14);
 
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(nova.getLat(), nova.getLng())));
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(kalpna.getLat(), kalpna.getLng())));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(nova.getLat(), nova.getLng())).title(nova.getName()).snippet(nova.getAddress()));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(kalpna.getLat(), kalpna.getLng())).title(kalpna.getName()).snippet(kalpna.getAddress()));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(zizzi.getLat(), zizzi.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())));
