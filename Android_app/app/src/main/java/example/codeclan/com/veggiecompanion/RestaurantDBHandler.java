@@ -18,52 +18,21 @@ public class RestaurantDBHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "VeggieCompanion";
 
     private static final String TABLE_RESTAURANT = "restaurants";
-    private static final String TABLE_CRUELTYFREE = "cruelty_frees";
-    private static final String TABLE_RESOURCES = "resources";
-    private static final String TABLE_FAVOURITES = "favourites";
 
-    //Shared
     private static final String KEY_ID = "id";
-    private static final String KEY_DESCRIPTION = "description";
     private static final String KEY_NAME = "entry_name";
-    private static final String KEY_FAVOURITE = "favourite";
-    private static final String KEY_TYPE = "type";
-
-    //Individual table columns
-    //restaurant table
     private static final String KEY_ADDRESS = "address";
+    private static final String KEY_DESCRIPTION = "description";
+    private static final String KEY_FAVOURITE = "favourite";
     private static final String KEY_LAT = "lat";
     private static final String KEY_LNG = "lng";
 
-    //cruelty free table
-    private static final String KEY_IMAGE = "image";
 
-    //resources table
-    private static final String KEY_SOURCE = "source";
-
-    //Table create statements
     //restaurant create
     private static final String CREATE_TABLE_RESTAURANT = "CREATE TABLE "
             + TABLE_RESTAURANT + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
             + " VARCHAR," + KEY_ADDRESS + " VARCHAR," + KEY_FAVOURITE + " BOOLEAN,"
             + KEY_DESCRIPTION + " TEXT," + KEY_LAT + " INT," + KEY_LNG + " INT" + ")";
-
-    //cruelty free create
-    private static final String CREATE_TABLE_CRUELTY_FREE = "CREATE TABLE " + TABLE_CRUELTYFREE
-            + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " VARCHAR," + KEY_DESCRIPTION
-            + " TEXT," + KEY_TYPE + " VARCHAR," + KEY_FAVOURITE + " BOOLEAN," + KEY_IMAGE
-            + " TEXT" + ")";
-
-    //resources create
-    private static final String CREATE_TABLE_RESOURCES = "CREATE TABLE "
-            + TABLE_RESOURCES + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
-            + " VARCHAR," + KEY_SOURCE + " TEXT," + KEY_DESCRIPTION + " TEXT," + KEY_FAVOURITE
-            + " BOOLEAN," + KEY_TYPE + " VARCHAR" + ")";
-
-    //favourites create
-    private static final String CREATE_TABLE_FAVOURITES = "CREATE TABLE "
-            + TABLE_FAVOURITES + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
-            + " VARCHAR," + KEY_DESCRIPTION + " TEXT" + ")";
 
 
     public RestaurantDBHandler(Context context) {
@@ -73,17 +42,11 @@ public class RestaurantDBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_RESTAURANT);
-        db.execSQL(CREATE_TABLE_CRUELTY_FREE);
-        db.execSQL(CREATE_TABLE_RESOURCES);
-        db.execSQL(CREATE_TABLE_FAVOURITES);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESTAURANT);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESOURCES);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FAVOURITES);
 
         onCreate(db);
     }

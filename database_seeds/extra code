@@ -1,0 +1,40 @@
+private static final String TABLE_CRUELTYFREE = "cruelty_frees";
+    private static final String TABLE_RESOURCES = "resources";
+    private static final String TABLE_FAVOURITES = "favourites";
+
+    private static final String KEY_ID = "id";
+private static final String KEY_DESCRIPTION = "description";
+private static final String KEY_NAME = "entry_name";
+private static final String KEY_FAVOURITE = "favourite";
+private static final String KEY_TYPE = "type";
+
+//cruelty free table
+private static final String KEY_IMAGE = "image";
+
+//resources table
+private static final String KEY_SOURCE = "source";
+
+//cruelty free create
+ private static final String CREATE_TABLE_CRUELTY_FREE = "CREATE TABLE " + TABLE_CRUELTYFREE
+         + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " VARCHAR," + KEY_DESCRIPTION
+         + " TEXT," + KEY_TYPE + " VARCHAR," + KEY_FAVOURITE + " BOOLEAN," + KEY_IMAGE
+         + " TEXT" + ")";
+
+ //resources create
+ private static final String CREATE_TABLE_RESOURCES = "CREATE TABLE "
+         + TABLE_RESOURCES + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
+         + " VARCHAR," + KEY_SOURCE + " TEXT," + KEY_DESCRIPTION + " TEXT," + KEY_FAVOURITE
+         + " BOOLEAN," + KEY_TYPE + " VARCHAR" + ")";
+
+ //favourites create
+ private static final String CREATE_TABLE_FAVOURITES = "CREATE TABLE "
+         + TABLE_FAVOURITES + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
+         + " VARCHAR," + KEY_DESCRIPTION + " TEXT" + ")";
+
+         db.execSQL(CREATE_TABLE_CRUELTY_FREE);
+         db.execSQL(CREATE_TABLE_RESOURCES);
+         db.execSQL(CREATE_TABLE_FAVOURITES);
+
+         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
+db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESOURCES);
+db.execSQL("DROP TABLE IF EXISTS " + TABLE_FAVOURITES);
