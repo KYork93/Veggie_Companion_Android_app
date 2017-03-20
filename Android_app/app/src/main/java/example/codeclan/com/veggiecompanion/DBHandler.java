@@ -77,8 +77,6 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CRUELTY_FREE);
         db.execSQL(CREATE_TABLE_RESOURCES);
         db.execSQL(CREATE_TABLE_FAVOURITES);
-
-        getAllRestaurants();
     }
 
     @Override
@@ -167,6 +165,11 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
         return restaurants;
+    }
+
+    public int deleteAllRestaurant(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_RESTAURANT, null, null);
     }
 
 }
