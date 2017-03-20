@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,23 +27,20 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     GoogleMap mGoogleMap;
     ListView restaurantList;
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
-            "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
-            "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
+                                                "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
+                                                  "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
     RestaurantModel hendersons = new RestaurantModel("Henderson of Edinburgh", "94 Hanover St, EH2 1DR", "multiple locations all over Edinburgh and a Deli Shop,\n" +
                                                 "organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.", 0, 55.954245, -3.1981975999999577);
     RestaurantModel banns = new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go.\n" +
-                                "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425);
-    RestaurantModel  zizzi = new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +
+                                                "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425);
+    RestaurantModel zizzi = new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +
                                                    "Somewhere you can go and there is an option for every that isn't just salad but inventive\n" +
                                                    "and exciting dishes.", 0, 55.950563, -3.208798);
     RestaurantModel kalpna = new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally.\n" +
-            "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052);
+                                                "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052);
     RestaurantModel nova = new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place\n" +
                                                  "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options\n" +
                                                  "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501);
-
-
-
 
 
     @Override
@@ -91,6 +89,9 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())).title(banns.getName()).snippet(banns.getAddress()));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())).title(ppalms.getName()).snippet(ppalms.getAddress()));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(hendersons.getLat(), hendersons.getLng())).title(hendersons.getName()).snippet(hendersons.getAddress()));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.9505717, -3.1799576)).title("Henderson of Edinburgh, Holyrood").snippet("4 Gentle's Entry, Edinburgh, EH8 8AU"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.946661, -3.200093)).title("Zizzi's").snippet("Edinburgh Quay, Fountainbridge, Edinburgh EH3 9RU"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(55.946661, -3.200093)).title("Zizzi's").snippet("1 Roxburgh Ct, Edinburgh EH1 1PG"));
     }
 
     private void goToLocation(double lat, double lng, float zoom) {
@@ -126,6 +127,14 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         restaurantList = (ListView) findViewById(R.id.restaurant_list);
         RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.restaurant_name, allRestaurants);
         restaurantList.setAdapter(adapter);
+    }
+
+    public void onCheckedBox(){
+        CheckBox favouriteCheck = (CheckBox) findViewById(R.id.rest_favourite);
+
+        if(favouriteCheck.isChecked()){
+
+        }
     }
 
     @Override

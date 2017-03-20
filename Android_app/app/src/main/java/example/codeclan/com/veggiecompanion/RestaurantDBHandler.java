@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class RestaurantDBHandler extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "VeggieCompanion";
-
     private static final String TABLE_RESTAURANT = "restaurants";
 
     private static final String KEY_ID = "id";
