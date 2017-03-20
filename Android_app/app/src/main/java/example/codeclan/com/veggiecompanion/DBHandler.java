@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by user on 17/03/2017.
  */
@@ -127,6 +130,33 @@ public class DBHandler extends SQLiteOpenHelper {
         restaurant.setLng(cursor.getInt(cursor.getColumnIndex(KEY_LNG)));
 
         return restaurant;
+    }
+
+    public List<RestaurantModel> getAllRestaurants(){
+        List<RestaurantModel> restaurants = new ArrayList<RestaurantModel>();
+        String selectQuery = "SELECT * FROM " + TABLE_RESTAURANT;
+
+        Log.e("select all query", selectQuery);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                RestaurantModel restaurant = new RestaurantModel();
+                restaurant.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
+                restaurant.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+                restaurant.setAddress(cursor.getString(cursor.getColumnIndex(KEY_ADDRESS)));
+                restaurant.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
+                restaurant.setFavourite(cursor.getInt(cursor.getColumnIndex(KEY_FAVOURITE)));
+                restaurant.setLat(cursor.getInt(cursor.getColumnIndex(KEY_LAT)));
+                restaurant.setLng(cursor.getInt(cursor.getColumnIndex(KEY_LNG)));
+
+                restaurants.add(restaurant);
+            } while(cursor.moveToNext());
+        }
+
+        return restaurants;
     }
 
 }
