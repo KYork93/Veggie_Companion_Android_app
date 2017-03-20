@@ -77,6 +77,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_CRUELTY_FREE);
         db.execSQL(CREATE_TABLE_RESOURCES);
         db.execSQL(CREATE_TABLE_FAVOURITES);
+
+        getAllRestaurants();
     }
 
     @Override
@@ -89,7 +91,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void createRestaurantTable(RestaurantModel restaurant){
+    public void addToRestaurantTable(RestaurantModel restaurant){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();

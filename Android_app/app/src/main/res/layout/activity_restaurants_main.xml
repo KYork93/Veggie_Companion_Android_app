@@ -13,26 +13,27 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         tools:context="example.codeclan.com.veggiecompanion.RestaurantMainActivity"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="30dp" />
+        tools:layout_editor_absoluteY="-7dp"
+        tools:layout_editor_absoluteX="55dp" />
 
     <ScrollView
         android:layout_width="14dp"
         android:layout_height="495dp"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteX="381dp"
+        tools:layout_editor_absoluteY="54dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ListView
+                android:id="@+id/restaurant_list"
+                android:layout_below="@+id/map_fragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/restaurant_list"/>
+                android:layout_height="match_parent" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

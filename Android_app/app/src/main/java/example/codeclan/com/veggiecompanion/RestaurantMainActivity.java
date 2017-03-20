@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ import java.util.List;
 public class RestaurantMainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap mGoogleMap;
-    TextView restaurantList;
+    ListView restaurantList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
             //No google maps layout
         }
 
-        addToRestaurantDB();
+        this.addToRestaurantDB();
     }
 
     private void initMap() {
@@ -77,19 +78,22 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
 
     public void addToRestaurantDB(){
-        DBHandler db = new DBHandler(getApplicationContext());
+        DBHandler db = new DBHandler(this);
 
-        RestaurantModel pPalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
+        db.addToRestaurantTable(new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
-                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
-
-        db.createRestaurantTable(pPalms);
+                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225));
 
         List<RestaurantModel> allRestaurants = db.getAllRestaurants();
 
-        restaurantList = (TextView) findViewById(R.id.restaurant_list);
+        for(RestaurantModel restaurant : allRestaurants){
+            String log = "Id: " + restaurant.getId() + " Name: " + restaurant.getName() + " Address " + restaurant.getAddress();
+            Log.e("Seeding: ", log);
+        }
 
-        restaurantList.setText(allRestaurants);
+        restaurantList = (ListView) findViewById(R.id.restaurant_list);
+
+        restaurantList.setAdapter(new ArrayAdapter<RestaurantModel>(RestaurantMainActivity.this, R.layout.restaurant_activity_listview, allRestaurants));
 
     }
 
