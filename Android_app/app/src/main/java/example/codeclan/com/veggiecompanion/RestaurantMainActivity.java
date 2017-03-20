@@ -42,7 +42,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
             //No google maps layout
         }
 
-        this.addToRestaurantDB();
+        this.appendRestaurantsToView();
     }
 
     private void initMap() {
@@ -98,6 +98,13 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         db.addToRestaurantTable(new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place\n" +
                 "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options\n" +
                 "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501));
+
+    }
+
+    public void appendRestaurantsToView(){
+        addToRestaurantDB();
+
+        DBHandler db = new DBHandler(this);
 
         ArrayList<RestaurantModel> allRestaurants = db.getAllRestaurants();
 
