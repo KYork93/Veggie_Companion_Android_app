@@ -90,15 +90,13 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         ArrayList<RestaurantModel> allRestaurants = db.getAllRestaurants();
 
         for(RestaurantModel restaurant : allRestaurants){
-            String log = " Name: " + restaurant.getName() + " Address " + restaurant.getAddress();
+            String log = "ID: " + restaurant.getId() + " Name: " + restaurant.getName() + " Address " + restaurant.getAddress();
             Log.d("Seeding: ", log);
         }
 
         restaurantList = (ListView) findViewById(R.id.restaurant_list);
 
         restaurantList.setAdapter(new RestaurantAdapter(this, R.id.allOfIt, allRestaurants));
-
-        Log.e("watup", restaurantList.toString());
     }
 
 }

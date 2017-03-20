@@ -18,12 +18,11 @@ import java.util.ArrayList;
 public class RestaurantAdapter extends ArrayAdapter {
 
     Context context;
-    int layoutResourceId;
-    ArrayList<RestaurantModel> data = null;
+    ArrayList<RestaurantModel> data = new ArrayList<>();
 
 
-    public RestaurantAdapter(Context context, int layoutResourceId, ArrayList<RestaurantModel> data){
-        super(context, layoutResourceId, data);
+    public RestaurantAdapter(Context context, int textViewResourceId, ArrayList<RestaurantModel> data){
+        super(context, textViewResourceId, data);
         this.context = context;
     }
 
@@ -31,28 +30,16 @@ public class RestaurantAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View row = convertView;
-        RestaurantHolder holder = null;
 
-        if (row == null) {
-            LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        row = inflater.inflate(R.layout.restaurant_entry, parent, false);
 
-            holder = new RestaurantHolder();
-            holder.allOfIt = (TextView) row.findViewById(R.id.allOfIt);
-
-            row.setTag(holder);
-        } else {
-            holder = (RestaurantHolder)row.getTag();
-        }
+        TextView view = (TextView)row.findViewById(R.id.allOfIt);
 
         RestaurantModel restaurant = data.get(position);
-        holder.allOfIt.setText(restaurant.name);
+        view.setText(String.valueOf(restaurant.getName()));
 
         return row;
     }
 
-
-    static class RestaurantHolder {
-        TextView allOfIt;
-    }
 }
