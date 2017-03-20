@@ -89,14 +89,14 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mGoogleMap = googleMap;
-        goToLocation(55.95029, -3.205775, 14);
+        goToLocation(55.9505461978, -3.1907325704, 14);
 
         googleMap.addMarker(new MarkerOptions().position(new LatLng(nova.getLat(), nova.getLng())).title(nova.getName()).snippet(nova.getAddress()));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(kalpna.getLat(), kalpna.getLng())).title(kalpna.getName()).snippet(kalpna.getAddress()));
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(zizzi.getLat(), zizzi.getLng())));
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())));
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())));
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(hendersons.getLat(), hendersons.getLng())));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(zizzi.getLat(), zizzi.getLng())).title(zizzi.getName()).snippet(zizzi.getAddress()));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(banns.getLat(), banns.getLng())).title(banns.getName()).snippet(banns.getAddress()));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(ppalms.getLat(), ppalms.getLng())).title(ppalms.getName()).snippet(ppalms.getAddress()));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(hendersons.getLat(), hendersons.getLng())).title(hendersons.getName()).snippet(hendersons.getAddress()));
     }
 
     private void goToLocation(double lat, double lng, float zoom) {
