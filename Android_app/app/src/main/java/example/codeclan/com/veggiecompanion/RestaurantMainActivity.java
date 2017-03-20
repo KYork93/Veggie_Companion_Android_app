@@ -78,8 +78,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     public void addToRestaurantDB(){
         DBHandler db = new DBHandler(this);
 
-        db.createRestaurantTable(new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
+        db.createRestaurantTable(new RestaurantModel(1, "Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
-                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", false, 55.946272, -3.189225));
+                "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225));
     }
 }

@@ -6,7 +6,9 @@ import android.content.Context;
  * Created by user on 17/03/2017.
  */
 
-public class RestaurantModel extends Context {
+public class RestaurantModel {
+
+    //favourite is either 1 or 0
 
     public int id;
     public String name;

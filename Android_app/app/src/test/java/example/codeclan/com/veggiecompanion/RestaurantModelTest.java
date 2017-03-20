@@ -17,8 +17,11 @@ public class RestaurantModelTest {
 
     @Before
     public void before() {
-        restaurant = new RestaurantModel("Paradise Palms", "6 Great St", "It\'s damn good", true, 53.1, -13.3);
+        restaurant = new RestaurantModel(1, "Paradise Palms", "6 Great St", "It\'s damn good", 1, 53.1, -13.3);
     }
+
+    @Test
+    public void restaurantHasId(){ assertEquals(1, restaurant.id); }
 
     @Test
     public void restaurantHasName(){
@@ -37,7 +40,7 @@ public class RestaurantModelTest {
 
     @Test
     public void restaurantIsAFavourite(){
-        assertEquals(true, restaurant.favourite);
+        assertEquals(1, restaurant.favourite);
     }
 
     @Test
