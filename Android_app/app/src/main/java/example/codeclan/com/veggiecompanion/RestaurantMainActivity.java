@@ -95,7 +95,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         }
 
         restaurantList = (ListView) findViewById(R.id.restaurant_list);
-        RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.allOfIt, allRestaurants);
+        RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.restaurant_name, allRestaurants);
         restaurantList.setAdapter(adapter);
     }
 

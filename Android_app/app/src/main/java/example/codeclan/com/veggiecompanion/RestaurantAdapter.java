@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -35,10 +37,12 @@ public class RestaurantAdapter extends ArrayAdapter {
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         row = inflater.inflate(R.layout.restaurant_entry, parent, false);
 
-        TextView view = (TextView)row.findViewById(R.id.allOfIt);
+        TextView view = (TextView)row.findViewById(R.id.restaurant_name);
+        TextView restAddress = (TextView)row.findViewById(R.id.restaurant_address);
 
         RestaurantModel restaurant = data.get(position);
         view.setText(String.valueOf(restaurant.getName()));
+        restAddress.setText(String.valueOf(restaurant.getAddress()));
 
         return row;
     }
