@@ -1,9 +1,5 @@
 package example.codeclan.com.veggiecompanion;
 
-import android.content.Context;
-
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 
 /**
  * Created by user on 17/03/2017.

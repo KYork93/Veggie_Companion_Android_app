@@ -126,6 +126,4 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         restaurantList.setAdapter(adapter);
     }
 
-
-
 }

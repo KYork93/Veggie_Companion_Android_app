@@ -1,0 +1,11 @@
+Resource not found -
+changed the resource from referring to an id to referring to a layout file
+
+Getting index on an array of 0 size -
+Set the array object to a set of pre-existing data in the constructor
+
+Setting value to a null object -
+forgotten to change the name of the resource id in the file so changed it
+
+Missing ; -
+moving info around and corrected the brackets of the object
