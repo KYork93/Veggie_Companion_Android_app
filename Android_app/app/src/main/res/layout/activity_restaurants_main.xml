@@ -5,22 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="example.codeclan.com.veggiecompanion.RestaurantMainActivity">
+    <ScrollView
+        android:layout_width="395dp"
+        android:layout_height="10000dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+    <RelativeLayout
+        android:layout_width="395dp"
+        android:layout_height="587dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map_fragment"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            tools:context="example.codeclan.com.veggiecompanion.RestaurantMainActivity"
+            tools:layout_editor_absoluteY="-7dp"
+            tools:layout_editor_absoluteX="55dp" />
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/map_fragment"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        tools:context="example.codeclan.com.veggiecompanion.RestaurantMainActivity"
-        tools:layout_editor_absoluteY="-7dp"
-        tools:layout_editor_absoluteX="55dp" />
+        <ListView
+         android:id="@+id/restaurant_list"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+            android:layout_below="@id/map_fragment" />
+    </RelativeLayout>
 
-    <ListView
-        android:id="@+id/restaurant_list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
-
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
+
+
+
