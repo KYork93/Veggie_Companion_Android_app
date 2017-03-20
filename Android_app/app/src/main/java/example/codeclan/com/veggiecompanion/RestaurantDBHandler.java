@@ -8,13 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by user on 17/03/2017.
  */
 
-public class DBHandler extends SQLiteOpenHelper {
+public class RestaurantDBHandler extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "VeggieCompanion";
 
@@ -67,7 +66,7 @@ public class DBHandler extends SQLiteOpenHelper {
             + " VARCHAR," + KEY_DESCRIPTION + " TEXT" + ")";
 
 
-    public DBHandler(Context context) {
+    public RestaurantDBHandler(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 

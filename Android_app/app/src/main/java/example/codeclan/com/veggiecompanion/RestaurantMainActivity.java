@@ -1,18 +1,14 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.app.Dialog;
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,11 +17,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class RestaurantMainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -107,7 +99,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
 
     public void addToRestaurantDB(){
-        DBHandler db = new DBHandler(this);
+        RestaurantDBHandler db = new RestaurantDBHandler(this);
         db.deleteAllRestaurant();
 
         db.addToRestaurantTable(ppalms);
@@ -120,7 +112,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
     public void appendRestaurantsToView(){
         addToRestaurantDB();
-        DBHandler db = new DBHandler(this);
+        RestaurantDBHandler db = new RestaurantDBHandler(this);
 
         ArrayList<RestaurantModel> allRestaurants = db.getAllRestaurants();
 
