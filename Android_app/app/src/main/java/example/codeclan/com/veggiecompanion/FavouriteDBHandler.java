@@ -54,6 +54,29 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public FavouriteModel getFavourite(long favourite_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selectQuery = "SELECT * FROM " + TABLE_FAVOURITES + " WHERE "
+                + KEY_ID + " = " + favourite_id;
+
+        Log.e("select query", selectQuery);
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor != null){
+            cursor.moveToFirst();
+        }
+
+        FavouriteModel favourite = new FavouriteModel();
+
+        favourite.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
+        favourite.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
+        favourite.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
+
+        return favourite;
+    }
+
     public ArrayList<FavouriteModel> getAllFavourites() {
         ArrayList<FavouriteModel> favourites = new ArrayList<FavouriteModel>();
         String selectQuery = "SELECT * FROM " + TABLE_FAVOURITES;
