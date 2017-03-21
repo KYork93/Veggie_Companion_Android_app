@@ -30,7 +30,7 @@ public class RestaurantDBHandler extends SQLiteOpenHelper {
     //restaurant create
     private static final String CREATE_TABLE_RESTAURANT = "CREATE TABLE "
             + TABLE_RESTAURANT + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
-            + " VARCHAR," + KEY_ADDRESS + " VARCHAR," + KEY_FAVOURITE + " BOOLEAN,"
+            + " VARCHAR," + KEY_ADDRESS + " VARCHAR," + KEY_FAVOURITE + " INT,"
             + KEY_DESCRIPTION + " TEXT," + KEY_LAT + " INT," + KEY_LNG + " INT" + ")";
 
 

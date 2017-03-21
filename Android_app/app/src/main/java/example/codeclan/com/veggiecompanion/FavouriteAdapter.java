@@ -17,9 +17,9 @@ import java.util.ArrayList;
 public class FavouriteAdapter extends ArrayAdapter {
 
     Context context;
-    ArrayList<FavouriteModel> data = new ArrayList<>();
+    ArrayList<RestaurantModel> data = new ArrayList<>();
 
-    public FavouriteAdapter(Context context, int textViewResourceId, ArrayList<FavouriteModel> data) {
+    public FavouriteAdapter(Context context, int textViewResourceId, ArrayList<RestaurantModel> data) {
         super(context, textViewResourceId, data);
         this.context = context;
         this.data = data;
@@ -36,7 +36,7 @@ public class FavouriteAdapter extends ArrayAdapter {
         TextView view = (TextView)row.findViewById(R.id.favourite_name);
         TextView favDesc = (TextView)row.findViewById(R.id.favourite_description);
 
-        FavouriteModel favourite = data.get(position);
+        RestaurantModel favourite = data.get(position);
         view.setText(String.valueOf(favourite.getName()));
         favDesc.setText(favourite.getDescription());
 

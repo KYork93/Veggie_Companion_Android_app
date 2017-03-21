@@ -42,7 +42,7 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addFavouriteToFavourites(RestaurantModel favourite) {
+    public void addFavouriteToFavourites(FavouriteModel favourite) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -53,6 +53,16 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
 
         db.close();
     }
+
+    public void addFromOtherTable(){
+        String selectQuery = "INSERT INTO VEGGIECOMPANION.FAVOURITES VALUES"
+                + KEY_NAME + ", " + KEY_DESCRIPTION
+                + " FROM VEGGIECOMPANION.RESTAURANTS WHERE RESTAURANTS.FAVOURITE == 1";
+
+
+
+    }
+
 
     public FavouriteModel getFavourite(long favourite_id){
         SQLiteDatabase db = this.getReadableDatabase();

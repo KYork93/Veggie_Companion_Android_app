@@ -36,6 +36,8 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     ListView restaurantList;
     Intent intent;
     Button addToFav;
+    boolean isClicked = false;
+
 
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                                                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
@@ -67,6 +69,12 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         this.appendRestaurantsToView();
 
         addToFav = (Button)findViewById(R.id.rest_favourite);
+        addToFav.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                isClicked = true;
+            }
+        });
 
         Log.d(getClass().toString(), "onCreate made");
     }
@@ -152,12 +160,11 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     }
 
     public void addRestaurantToFavouriteDB(RestaurantModel restaurant){
-        FavouriteDBHandler db = new FavouriteDBHandler(this);
-        db.deleteAllFavourites();
+        ArrayList<RestaurantModel> allFavourites = new ArrayList<>();
 
-        db.addFavouriteToFavourites(restaurant);
-
-        ArrayList<FavouriteModel> allFavourites = db.getAllFavourites();
+        if(isClicked == true){
+            allFavourites.add(restaurant);
+        }
 
         ListView favouriteList = (ListView) findViewById(R.id.favourite_item);
         FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, allFavourites);
