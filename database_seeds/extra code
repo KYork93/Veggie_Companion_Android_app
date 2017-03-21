@@ -35,3 +35,16 @@ private static final String KEY_SOURCE = "source";
          db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
 db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESOURCES);
 db.execSQL("DROP TABLE IF EXISTS " + TABLE_FAVOURITES);
+
+
+public void addRestaurantToFavouriteDB(RestaurantModel restaurant){
+      ArrayList<RestaurantModel> allFavourites = new ArrayList<>();
+
+      if(isClicked == true){
+          allFavourites.add(restaurant);
+      }
+
+      ListView favouriteList = (ListView) findViewById(R.id.favourite_item);
+      FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, allFavourites);
+      favouriteList.setAdapter(adapter);
+  }

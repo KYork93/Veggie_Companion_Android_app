@@ -74,11 +74,11 @@ public class RestaurantDBHandler extends SQLiteOpenHelper {
     }
 
 
-    public RestaurantModel getRestaurant(long restaurant_id){
+    public RestaurantModel getRestaurant(String restaurant_name){
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selectQuery = "SELECT * FROM " + TABLE_RESTAURANT + " WHERE "
-                + KEY_ID + " = " + restaurant_id;
+                + KEY_NAME + " = " + restaurant_name;
 
         Log.e("select query", selectQuery);
 

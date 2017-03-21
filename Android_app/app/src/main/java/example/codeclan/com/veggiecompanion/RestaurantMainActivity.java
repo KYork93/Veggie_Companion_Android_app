@@ -1,7 +1,9 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.v4.content.ContextCompat;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -158,18 +161,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.restaurant_name, allRestaurants);
         restaurantList.setAdapter(adapter);
     }
-
-    public void addRestaurantToFavouriteDB(RestaurantModel restaurant){
-        ArrayList<RestaurantModel> allFavourites = new ArrayList<>();
-
-        if(isClicked == true){
-            allFavourites.add(restaurant);
-        }
-
-        ListView favouriteList = (ListView) findViewById(R.id.favourite_item);
-        FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, allFavourites);
-        favouriteList.setAdapter(adapter);
-    }
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -188,5 +180,21 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         return super.onOptionsItemSelected(item);
     }
 
+    public void saveRestaurant(View view){
+        TextView restaurantName = (TextView)findViewById(R.id.restaurant_name);
+        TextView restDescription = (TextView)findViewById(R.id.restaurant_description);
+
+        String name = String.valueOf(restaurantName.getText());
+        String description = String.valueOf(restDescription.getText());
+
+        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("restName", name);
+        editor.putString("restDescription", description);
+        editor.apply();
+
+        Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+    }
 
 }
