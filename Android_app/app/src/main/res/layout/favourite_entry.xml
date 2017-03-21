@@ -8,9 +8,10 @@
         android:layout_height="match_parent"
         android:id="@+id/favourite_name"/>
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/favourite_description"/>
+        android:id="@+id/remove_favourite"
+        android:onClick="onRemoveButtonClicked"/>
 
 </LinearLayout>

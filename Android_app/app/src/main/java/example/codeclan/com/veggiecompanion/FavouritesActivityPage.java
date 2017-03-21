@@ -9,8 +9,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +25,14 @@ public class FavouritesActivityPage extends AppCompatActivity{
 
     Intent intent;
     ListView favouriteList;
+    Button removeButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favourite_activity);
+
+        removeButton = (Button) findViewById(R.id.remove_favourite);
 
         this.showFavouriteRestaurants();
     }
@@ -41,12 +46,16 @@ public class FavouritesActivityPage extends AppCompatActivity{
         int count = prefSize;
 
         for(int i = 0; i < count; i++){
-            sharedList.add(sharedPref.getString("restName", ""));
+            sharedList.add(sharedPref.getString("restName", "") + "\n\n" + sharedPref.getString("restDescription", ""));
         }
 
         favouriteList = (ListView) findViewById(R.id.favourite_list);
         FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, sharedList);
         favouriteList.setAdapter(adapter);
+    }
+
+    public void onRemoveButtonClicked(View view){
+        Toast.makeText(FavouritesActivityPage.this, "Removed from Favourites", Toast.LENGTH_SHORT).show();
     }
 
     @Override

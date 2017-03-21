@@ -32,11 +32,12 @@ public class FavouriteAdapter extends ArrayAdapter {
         convertView = inflater.inflate(R.layout.favourite_entry, parent, false);
 
         TextView view = (TextView)convertView.findViewById(R.id.favourite_name);
-//        TextView favDesc = (TextView)row.findViewById(R.id.favourite_description);
 
         String favourite = data.get(position);
         view.setText(favourite);
+
         convertView.setTag(view);
+
         return convertView;
     }
 
