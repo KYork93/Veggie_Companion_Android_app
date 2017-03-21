@@ -28,12 +28,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RestaurantMainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap mGoogleMap;
     ListView restaurantList;
     Intent intent;
+    Button addToFav;
 
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                                                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
@@ -62,8 +64,10 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         } else {
             //No google maps layout
         }
-
         this.appendRestaurantsToView();
+
+        addToFav = (Button)findViewById(R.id.rest_favourite);
+
         Log.d(getClass().toString(), "onCreate made");
     }
 
@@ -145,6 +149,19 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         restaurantList = (ListView) findViewById(R.id.restaurant_list);
         RestaurantAdapter adapter = new RestaurantAdapter(this, R.id.restaurant_name, allRestaurants);
         restaurantList.setAdapter(adapter);
+    }
+
+    public void addRestaurantToFavouriteDB(RestaurantModel restaurant){
+        FavouriteDBHandler db = new FavouriteDBHandler(this);
+        db.deleteAllFavourites();
+
+        db.addFavouriteToFavourites(restaurant);
+
+        ArrayList<FavouriteModel> allFavourites = db.getAllFavourites();
+
+        ListView favouriteList = (ListView) findViewById(R.id.favourite_item);
+        FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, allFavourites);
+        favouriteList.setAdapter(adapter);
     }
 
     @Override

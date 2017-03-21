@@ -42,7 +42,7 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addFavouriteToFavourites(FavouriteModel favourite) {
+    public void addFavouriteToFavourites(RestaurantModel favourite) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
