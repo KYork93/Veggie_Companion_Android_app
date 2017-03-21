@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,12 +36,13 @@ public class FavouritesActivityPage extends AppCompatActivity{
         removeButton = (Button) findViewById(R.id.remove_favourite);
 
         this.showFavouriteRestaurants();
+
     }
 
     public void showFavouriteRestaurants(){
         SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_WORLD_READABLE);
 
-        ArrayList<String> sharedList = new ArrayList<>();
+        final ArrayList<String> sharedList = new ArrayList<>();
 
         int prefSize = sharedPref.getAll().size();
         int count = prefSize;
@@ -50,7 +52,7 @@ public class FavouritesActivityPage extends AppCompatActivity{
         }
 
         favouriteList = (ListView) findViewById(R.id.favourite_list);
-        FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, sharedList);
+        final FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, sharedList);
         favouriteList.setAdapter(adapter);
     }
 
