@@ -33,14 +33,12 @@ public class FavouritesActivityPage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favourite_activity);
 
-        removeButton = (Button) findViewById(R.id.remove_favourite);
-
         this.showFavouriteRestaurants();
 
     }
 
     public void showFavouriteRestaurants(){
-        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_WORLD_READABLE);
+        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_PRIVATE);
 
         final ArrayList<String> sharedList = new ArrayList<>();
 
@@ -53,11 +51,8 @@ public class FavouritesActivityPage extends AppCompatActivity{
 
         favouriteList = (ListView) findViewById(R.id.favourite_list);
         final FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, sharedList);
+        adapter.notifyDataSetChanged();
         favouriteList.setAdapter(adapter);
-    }
-
-    public void onRemoveButtonClicked(View view){
-        Toast.makeText(FavouritesActivityPage.this, "Removed from Favourites", Toast.LENGTH_SHORT).show();
     }
 
     @Override
