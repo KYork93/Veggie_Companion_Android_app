@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,6 +31,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     GoogleMap mGoogleMap;
     ListView restaurantList;
     Intent intent;
+    Button nearMe;
 
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                                                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
@@ -59,6 +62,10 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         }
 
         this.appendRestaurantsToView();
+
+        nearMe = (Button) findViewById(R.id.near_me_button);
+
+        Log.d(getClass().toString(), "onCreate made");
     }
 
     private void initMap() {
@@ -139,6 +146,14 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         if(favouriteCheck.isChecked()){
 
         }
+    }
+
+    public void nearMeButtonPressed(View button){
+        Log.d(getClass().toString(), "near me button pressed");
+
+        mGoogleMap.setMyLocationEnabled(true);
+        LatLng newLocation = new LatLng(location.getLatitude)
+
     }
 
     @Override
