@@ -27,23 +27,24 @@ public class FavouritesActivityPage extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.favourite_activity);
 
         this.showFavouriteRestaurants();
     }
 
     public void showFavouriteRestaurants(){
-        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_WORLD_READABLE);
 
         ArrayList<String> sharedList = new ArrayList<>();
 
-        int prefSize = sharedPref.getInt("SIZE", 0);
+        int prefSize = sharedPref.getAll().size();
         int count = prefSize;
 
         for(int i = 0; i < count; i++){
             sharedList.add(sharedPref.getString("restName", ""));
         }
 
-        favouriteList = (ListView) findViewById(R.id.favourite_item);
+        favouriteList = (ListView) findViewById(R.id.favourite_list);
         FavouriteAdapter adapter = new FavouriteAdapter(this, R.id.favourite_name, sharedList);
         favouriteList.setAdapter(adapter);
     }

@@ -28,18 +28,16 @@ public class FavouriteAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View row = convertView;
-
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-        row = inflater.inflate(R.layout.favourite_entry, parent, false);
+        convertView = inflater.inflate(R.layout.favourite_entry, parent, false);
 
-        TextView view = (TextView)row.findViewById(R.id.favourite_name);
-        TextView favDesc = (TextView)row.findViewById(R.id.favourite_description);
+        TextView view = (TextView)convertView.findViewById(R.id.favourite_name);
+//        TextView favDesc = (TextView)row.findViewById(R.id.favourite_description);
 
         String favourite = data.get(position);
-        view.setText(String.valueOf(favourite));
-
-        return row;
+        view.setText(favourite);
+        convertView.setTag(view);
+        return convertView;
     }
 
 

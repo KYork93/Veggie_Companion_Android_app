@@ -179,12 +179,12 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         String name = String.valueOf(restaurantName.getText());
         String description = String.valueOf(restDescription.getText());
 
-        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("restaurantInfo", Context.MODE_WORLD_READABLE);
 
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("restName", name);
         editor.putString("restDescription", description);
-        editor.apply();
+        editor.commit();
 
         Toast.makeText(this, "Added to Favourites", Toast.LENGTH_SHORT).show();
     }
