@@ -1,15 +1,15 @@
 A user should be able to access a list of restaurants in Edinburgh
-      -Page should load this List
+      -Page should load this List onload of app
       - Pass
 
-User should be able to click on googl maps markers to see an info window
-      -Google maps should load these markers and windows
+User should be able to click on google maps markers to see an info window
+      -Google maps should load these markers and windows onload of app
       - Pass
 
 User should be able to mark a restaurant as a Favourites
-      -clickable button should load restaurant to database
+      -clickable button should load restaurant to separate database
       - ~
 
 Database should be able to access db to show all Restaurants
-      -db should have a show all function that can be called
+      -db should have a show all function that can be called in view
       - Pass
