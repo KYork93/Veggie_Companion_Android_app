@@ -2,6 +2,9 @@ package example.codeclan.com.veggiecompanion;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +34,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     GoogleMap mGoogleMap;
     ListView restaurantList;
     Intent intent;
-    Button nearMe;
 
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
                                                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
@@ -62,9 +64,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         }
 
         this.appendRestaurantsToView();
-
-        nearMe = (Button) findViewById(R.id.near_me_button);
-
         Log.d(getClass().toString(), "onCreate made");
     }
 
@@ -93,6 +92,14 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     public void onMapReady(GoogleMap googleMap) {
         mGoogleMap = googleMap;
         goToLocation(55.9505461978, -3.1907325704, 14);
+
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            googleMap.setMyLocationEnabled(true);
+            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        } else {
+            // Show rationale and request permission.
+        }
 
         googleMap.addMarker(new MarkerOptions().position(new LatLng(nova.getLat(), nova.getLng())).title(nova.getName()).snippet(nova.getAddress()));
         googleMap.addMarker(new MarkerOptions().position(new LatLng(kalpna.getLat(), kalpna.getLng())).title(kalpna.getName()).snippet(kalpna.getAddress()));
@@ -140,22 +147,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         restaurantList.setAdapter(adapter);
     }
 
-    public void onCheckedBox(){
-        CheckBox favouriteCheck = (CheckBox) findViewById(R.id.rest_favourite);
-
-        if(favouriteCheck.isChecked()){
-
-        }
-    }
-
-    public void nearMeButtonPressed(View button){
-        Log.d(getClass().toString(), "near me button pressed");
-
-        mGoogleMap.setMyLocationEnabled(true);
-        LatLng newLocation = new LatLng(location.getLatitude)
-
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -172,4 +163,6 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

@@ -29,11 +29,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/near_me_button"/>
-
         <ListView
          android:id="@+id/restaurant_list"
          android:layout_width="fill_parent"
