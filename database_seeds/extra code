@@ -27,13 +27,10 @@ private static final String KEY_SOURCE = "source";
          + " BOOLEAN," + KEY_TYPE + " VARCHAR" + ")";
 
  //favourites create
- private static final String CREATE_TABLE_FAVOURITES = "CREATE TABLE "
-         + TABLE_FAVOURITES + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME
-         + " VARCHAR," + KEY_DESCRIPTION + " TEXT" + ")";
+
 
          db.execSQL(CREATE_TABLE_CRUELTY_FREE);
          db.execSQL(CREATE_TABLE_RESOURCES);
-         db.execSQL(CREATE_TABLE_FAVOURITES);
 
          db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
 db.execSQL("DROP TABLE IF EXISTS " + TABLE_RESOURCES);
