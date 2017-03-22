@@ -1,24 +1,10 @@
-private static final String TABLE_CRUELTYFREE = "cruelty_frees";
+
     private static final String TABLE_RESOURCES = "resources";
     private static final String TABLE_FAVOURITES = "favourites";
-
-    private static final String KEY_ID = "id";
-private static final String KEY_DESCRIPTION = "description";
-private static final String KEY_NAME = "entry_name";
-private static final String KEY_FAVOURITE = "favourite";
-private static final String KEY_TYPE = "type";
-
-//cruelty free table
-private static final String KEY_IMAGE = "image";
 
 //resources table
 private static final String KEY_SOURCE = "source";
 
-//cruelty free create
- private static final String CREATE_TABLE_CRUELTY_FREE = "CREATE TABLE " + TABLE_CRUELTYFREE
-         + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " VARCHAR," + KEY_DESCRIPTION
-         + " TEXT," + KEY_TYPE + " VARCHAR," + KEY_FAVOURITE + " BOOLEAN," + KEY_IMAGE
-         + " TEXT" + ")";
 
  //resources create
  private static final String CREATE_TABLE_RESOURCES = "CREATE TABLE "
