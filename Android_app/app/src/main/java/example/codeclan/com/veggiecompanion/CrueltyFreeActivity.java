@@ -22,17 +22,17 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     //seeds
     CrueltyFreeModel nyx = new CrueltyFreeModel("NYX", "Nyx is an affordable make up brand who are increasing in popularity due to their cruelty free and mainly vegan status.  The quality of their make up is high and has not affected their price, their colours are highly pigmented and lipsticks last longer than the high end brands.",
             "cosmetics", 0, R.mipmap.nyxbanner);
-    CrueltyFreeModel lush = new CrueltyFreeModel("Lush", "This high street store specialises in making their own products, totally\n" +
+    CrueltyFreeModel lush = new CrueltyFreeModel("Lush", "This high street store specialises in making their own products, totally " +
             "vegetarian with a lot of vegan products from bath bombs to make up.  There's something " +
             "for everyone here and the staff are friendly, often you can ask for take away samples." +
             "They have now also opened spas.", "cosmetics", 0, R.mipmap.lush_cosmetics_banner);
-    CrueltyFreeModel ecover = new CrueltyFreeModel("Ecover", "This company produces household cleaning products from washing up liquid\n" +
+    CrueltyFreeModel ecover = new CrueltyFreeModel("Ecover", "This company produces household cleaning products from washing up liquid " +
             "to bathroom cleaner using natural based products which will not harm the environment, no " +
             "animal testing is involved they are stored in recycled plastic bottles and even the factory " +
             "was build with ecology in mind.  To top it all of these products are available in most " +
             "major supermarkets at inexpensive prices!", "household", 0, R.mipmap.ecover_banner);
-    CrueltyFreeModel superdrug = new CrueltyFreeModel("Superdrug", "Superdrugs own products from toothpaste to their makeup brand B. are all cruelty free,\n" +
-            "with labels marking suitability for vegetarians and vegans.  All of their products are very\n" +
+    CrueltyFreeModel superdrug = new CrueltyFreeModel("Superdrug", "Superdrugs own products from toothpaste to their makeup brand B. are all cruelty free, " +
+            "with labels marking suitability for vegetarians and vegans.  All of their products are very " +
             "affordable and just as good as the brand names.", "cosmetics", 0, R.mipmap.super_drug_banner);
 
 
@@ -69,7 +69,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
         }
 
         companyList = (ListView) findViewById(R.id.cruelty_free_list);
-        CrueltyFreeAdapter adapter = new CrueltyFreeAdapter(this, R.id.company_id, allCompanies);
+        CrueltyFreeAdapter adapter = new CrueltyFreeAdapter(CrueltyFreeActivity.this, R.id.company_id, allCompanies);
         companyList.setAdapter(adapter);
     }
 
