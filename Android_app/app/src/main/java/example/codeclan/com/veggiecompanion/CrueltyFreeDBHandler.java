@@ -63,9 +63,15 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
                 company.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
                 company.setType(cursor.getString(cursor.getColumnIndex(KEY_TYPE)));
                 company.setImage(cursor.getString(cursor.getColumnIndex(KEY_IMAGE)));
-                company.setFavourite(cursor.getString(cursor.getColumnIndex(KEY_FAVOURITE)));
-            }
+                company.setFavourite(cursor.getInt(cursor.getColumnIndex(KEY_FAVOURITE)));
+            } while (cursor.moveToNext());
         }
-
+        return companies;
     }
+
+    public int deleteAllCompanies(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_CRUELTYFREE, null, null);
+    }
+
 }
