@@ -21,7 +21,7 @@ public class RestaurantAdapter extends ArrayAdapter {
 
     Context context;
     ArrayList<RestaurantModel> data = new ArrayList<>();
-    public int restId;
+
 
     public RestaurantAdapter(Context context, int textViewResourceId, ArrayList<RestaurantModel> data){
         super(context, textViewResourceId, data);
@@ -45,8 +45,6 @@ public class RestaurantAdapter extends ArrayAdapter {
         view.setText(String.valueOf(restaurant.getName()));
         restAddress.setText(String.valueOf(restaurant.getAddress()));
         restDesc.setText(restaurant.getDescription());
-
-        restId = restaurant.getId();
 
         return row;
     }
