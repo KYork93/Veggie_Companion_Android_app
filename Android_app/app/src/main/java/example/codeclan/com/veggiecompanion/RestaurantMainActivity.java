@@ -37,20 +37,20 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     Intent intent;
     Button addToFav;
 
-    RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options,\n" +
-                                                "whole restaurant is vegetarian so you can be assured there's no kitchen contamination,\n" +
+    RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options, " +
+                                                "whole restaurant is vegetarian so you can be assured there's no kitchen contamination, " +
                                                   "2 for 1 vegan hotdogs every Tuesday and Vegan Roasts every Sunday.", 0, 55.946272, -3.189225);
-    RestaurantModel hendersons = new RestaurantModel("Henderson of Edinburgh", "94 Hanover St, EH2 1DR", "multiple locations all over Edinburgh and a Deli Shop,\n" +
+    RestaurantModel hendersons = new RestaurantModel("Henderson of Edinburgh", "94 Hanover St, EH2 1DR", "multiple locations all over Edinburgh and a Deli Shop, " +
                                                 "organic and vegetarian with a lot of vegan options, dishes made from seasonal fare.", 0, 55.954245, -3.1981975999999577);
-    RestaurantModel banns = new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go.\n" +
+    RestaurantModel banns = new RestaurantModel("David Bann Restaurant", "56-58 St Mary's St, EH1 1SX", "If you fancy a proper meal out this is where to go. " +
                                                 "David Bann's vegetarian restaurant is described as having creative and eclectic dishes.", 0, 55.949539, -3.183425);
-    RestaurantModel zizzi = new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options.\n" +
-                                                   "Somewhere you can go and there is an option for every that isn't just salad but inventive\n" +
+    RestaurantModel zizzi = new RestaurantModel("Zizzi's", "42-45 Queensferry St, EH2 4RA", "Zizzi's is a national Italian chain restaurant paving the way with their vegan options. " +
+                                                   "Somewhere you can go and there is an option for every that isn't just salad but inventive " +
                                                    "and exciting dishes.", 0, 55.950563, -3.208798);
-    RestaurantModel kalpna = new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally.\n" +
+    RestaurantModel kalpna = new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally. " +
                                                 "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052);
-    RestaurantModel nova = new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place\n" +
-                                                 "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options\n" +
+    RestaurantModel nova = new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place " +
+                                                 "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options " +
                                                  "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501);
 
 
