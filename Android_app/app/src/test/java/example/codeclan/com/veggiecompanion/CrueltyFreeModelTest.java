@@ -15,7 +15,7 @@ public class CrueltyFreeModelTest {
 
     @Before
     public void before(){
-        crueltyFreeCompany = new CrueltyFreeModel("NYX", "affordable vegan makeup", "cosmetics", true, "Image.png");
+        crueltyFreeCompany = new CrueltyFreeModel("NYX", "affordable vegan makeup", "cosmetics", 1, 123);
     }
 
     @Test
@@ -40,6 +40,6 @@ public class CrueltyFreeModelTest {
 
     @Test
     public void companyHasImage(){
-        assertEquals("Image.png", crueltyFreeCompany.image);
+        assertEquals(123, crueltyFreeCompany.image);
     }
 }
