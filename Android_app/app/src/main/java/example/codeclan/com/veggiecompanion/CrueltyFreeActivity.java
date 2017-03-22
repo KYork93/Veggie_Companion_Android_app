@@ -47,6 +47,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     }
 
     public void addToTheCrueltyFreeDatabase(){
+        Log.d("addToCFDB", "call");
         CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(CrueltyFreeActivity.this);
         db.deleteAllCompanies();
 

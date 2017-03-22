@@ -80,6 +80,8 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
                 company.setType(cursor.getString(cursor.getColumnIndex(KEY_TYPE)));
                 company.setImage(cursor.getInt(cursor.getColumnIndex(KEY_IMAGE)));
                 company.setFavourite(cursor.getInt(cursor.getColumnIndex(KEY_FAVOURITE)));
+
+                companies.add(company);
             } while (cursor.moveToNext());
         }
         return companies;
