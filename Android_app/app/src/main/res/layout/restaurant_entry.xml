@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/restaurant_name"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
         android:id="@+id/rest_favourite"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:src="@android:drawable/btn_star"
+        android:src="@android:drawable/btn_star_big_on"
         android:background="#00ffffff"
         android:onClick="saveRestaurant" />
 
