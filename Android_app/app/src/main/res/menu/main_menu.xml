@@ -9,4 +9,8 @@
         android:id="@+id/favourites_menu"
         android:title="@string/favourites_menu" />
 
+    <item
+        android:id="@+id/crueltyfree_menu"
+        android:title="CRUELTY FREE"/>
+
 </menu>

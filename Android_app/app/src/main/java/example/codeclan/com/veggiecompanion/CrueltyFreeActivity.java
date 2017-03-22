@@ -48,7 +48,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     }
 
     public void addToTheCrueltyFreeDatabase(){
-        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this, 1);
         db.deleteAllCompanies();
 
         db.addToCrueltyFreeTable(nyx);
@@ -59,7 +59,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
 
     public void showAllCFCompanies(){
         addToTheCrueltyFreeDatabase();
-        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this, 1);
 
         ArrayList<CrueltyFreeModel> allCompanies = db.getAllCrueltyFree();
 

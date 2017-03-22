@@ -30,9 +30,10 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
             + " TEXT," + KEY_TYPE + " VARCHAR," + KEY_FAVOURITE + " INT," + KEY_IMAGE
             + " INT" + ")";
 
-    public CrueltyFreeDBHandler(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+    public CrueltyFreeDBHandler(Context context, int version) {
+        super(context, DATABASE_NAME, null, version);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
