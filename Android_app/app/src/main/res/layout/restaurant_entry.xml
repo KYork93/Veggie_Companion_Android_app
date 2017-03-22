@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#D6D6CC">
 
     <TextView
         android:layout_width="match_parent"
@@ -11,20 +12,23 @@
         android:visibility="gone"/>
 
     <TextView
+        android:id="@+id/restaurant_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/restaurant_name"
+        android:textColor="#346923"
         android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/restaurant_address"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/restaurant_address"/>
+        android:textColor="#ABCC3D" />
 
     <TextView
+        android:id="@+id/restaurant_description"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/restaurant_description"/>
+        android:textColor="#ABCC3D" />
 
     <ImageButton
         android:id="@+id/rest_favourite"
