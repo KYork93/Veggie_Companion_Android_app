@@ -2,4 +2,5 @@
 <resources>
     <item name="allOfIt" type="id">all</item>
     <item name="get_favourites" type="id">favourites</item>
+    <item name="crueltyfree_menu" type="id">Cruelty Free</item>
 </resources>

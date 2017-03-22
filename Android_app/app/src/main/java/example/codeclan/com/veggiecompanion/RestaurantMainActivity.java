@@ -164,6 +164,9 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         if(item.getItemId() == R.id.favourites_menu){
             intent = new Intent(RestaurantMainActivity.this, FavouritesActivityPage.class);
             startActivity(intent);
+        } else if (item.getItemId() == R.id.crueltyfree_menu){
+            intent = new Intent(RestaurantMainActivity.this, CrueltyFreeActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
