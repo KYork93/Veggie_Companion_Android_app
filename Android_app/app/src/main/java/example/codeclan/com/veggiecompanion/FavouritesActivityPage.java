@@ -26,7 +26,6 @@ public class FavouritesActivityPage extends AppCompatActivity{
 
     Intent intent;
     ListView favouriteList;
-    Button removeButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
