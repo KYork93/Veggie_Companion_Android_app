@@ -26,7 +26,6 @@ public class RestaurantDBHandler extends SQLiteOpenHelper {
     private static final String KEY_LAT = "lat";
     private static final String KEY_LNG = "lng";
 
-
     //restaurant create
     private static final String CREATE_TABLE_RESTAURANT = "CREATE TABLE "
             + TABLE_RESTAURANT + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "VeggieCompanion";
+    private static final String DATABASE_NAME = "VeggieCompanionCF";
     private static final String TABLE_CRUELTYFREE = "crueltyfree";
 
     private static final String KEY_ID = "id";
@@ -34,7 +34,6 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, version);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_CRUELTY_FREE);
@@ -44,7 +43,7 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
 
-        db.close();
+        onCreate(db);
     }
 
     public void addToCrueltyFreeTable(CrueltyFreeModel company){
@@ -53,9 +52,9 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, company.getName());
         values.put(KEY_DESCRIPTION, company.getDescription());
+        values.put(KEY_FAVOURITE, company.getFavourite());
         values.put(KEY_TYPE, company.getType());
         values.put(KEY_IMAGE, company.getImage());
-        values.put(KEY_FAVOURITE, company.getFavourite());
 
         db.insert(TABLE_CRUELTYFREE, null, values);
 
@@ -64,7 +63,7 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
 
     public ArrayList<CrueltyFreeModel> getAllCrueltyFree(){
 
-        ArrayList<CrueltyFreeModel> companies = new ArrayList<>();
+        ArrayList<CrueltyFreeModel> companies = new ArrayList<CrueltyFreeModel>();
         String selectQuery = "SELECT * FROM " + TABLE_CRUELTYFREE;
 
         Log.e("select all query", selectQuery);
