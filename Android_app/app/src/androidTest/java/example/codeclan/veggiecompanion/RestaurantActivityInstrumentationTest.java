@@ -55,4 +55,12 @@ public class RestaurantActivityInstrumentationTest {
 
         onView(withText("Home"));
     }
+
+    @Test
+    public void checkForMenuToFavourites(){
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
+
+        onView(withText("Favourites"));
+    }
+
 }
