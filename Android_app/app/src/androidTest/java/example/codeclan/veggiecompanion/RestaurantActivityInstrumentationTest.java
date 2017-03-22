@@ -3,6 +3,7 @@ package example.codeclan.veggiecompanion;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
+import android.widget.Button;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,6 +13,7 @@ import example.codeclan.com.veggiecompanion.R;
 import example.codeclan.com.veggiecompanion.RestaurantMainActivity;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
+import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -21,6 +23,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withContentDesc
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withTagKey;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Created by user on 22/03/2017.
@@ -63,4 +69,9 @@ public class RestaurantActivityInstrumentationTest {
         onView(withText("Favourites"));
     }
 
+    @Test
+    public void checkForTheListViewData(){
+        onData(allOf(is(instanceOf(String.class)), is("Paradise Palms")));
+    }
 }
+
