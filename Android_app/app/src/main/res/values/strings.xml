@@ -3,4 +3,5 @@
     <string name="home_menu">HOME</string>
     <string name="favourites_menu">FAVOURITES</string>
     <string name="star_fav">favourite star</string>
+    <string name="google_map">Google Maps</string>
 </resources>

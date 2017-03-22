@@ -35,6 +35,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/map_fragment"
                 android:name="com.google.android.gms.maps.MapFragment"
+                android:tag="@string/google_map"
                 android:layout_width="500dp"
                 android:layout_height="320dp"
                 android:layout_alignParentLeft="true"
