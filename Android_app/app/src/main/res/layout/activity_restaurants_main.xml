@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="?android:attr/textColorSearchUrl"
     android:orientation="vertical"
     tools:context="example.codeclan.com.veggiecompanion.">
 
@@ -14,7 +13,7 @@
         android:scrollbars="vertical"
         tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="1dp"
-        android:background="#D6D6CC">
+        android:background="#FFFDFA">
 
         <RelativeLayout
             android:layout_width="395dp"
@@ -31,7 +30,7 @@
                 android:text="Veggie Companion"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textColor="#346923"
+                android:textColor="#CC492B"
                 android:textSize="36sp" />
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"

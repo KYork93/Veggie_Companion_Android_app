@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6D6CC">
+    android:background="#FFFDFA">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,20 +15,20 @@
         android:id="@+id/restaurant_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="#346923"
+        android:textColor="#CC492B"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/restaurant_address"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="#ABCC3D" />
+        android:textColor="#346923" />
 
     <TextView
         android:id="@+id/restaurant_description"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="#ABCC3D" />
+        android:textColor="#346923" />
 
     <ImageButton
         android:id="@+id/rest_favourite"
