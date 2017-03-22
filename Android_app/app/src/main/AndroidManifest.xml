@@ -44,9 +44,6 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB0EFKRAIwdLx_95aI4vWzpe0RAdM6wMqU" />
 
-        <meta-data
-            android:name="android.app.searchable"/>
-
     </application>
 
 </manifest>
