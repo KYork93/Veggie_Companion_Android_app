@@ -11,11 +11,11 @@ public class CrueltyFreeModel {
     public String description;
     public String type;
     public int favourite;
-    public String image;
+    public int image;
 
     public CrueltyFreeModel(){}
 
-    public CrueltyFreeModel(String name, String description, String type, int favourite, String image) {
+    public CrueltyFreeModel(String name, String description, String type, int favourite, int image) {
         this.name = name;
         this.description = description;
         this.type = type;
@@ -23,7 +23,7 @@ public class CrueltyFreeModel {
         this.image = image;
     }
 
-    public CrueltyFreeModel(int id, String name, String description, String type, int favourite, String image) {
+    public CrueltyFreeModel(int id, String name, String description, String type, int favourite, int image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -72,11 +72,11 @@ public class CrueltyFreeModel {
         this.favourite = favourite;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

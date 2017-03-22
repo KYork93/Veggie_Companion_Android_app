@@ -1,9 +1,16 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.app.Activity;
 import android.content.Context;
+import android.media.Image;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -24,6 +31,19 @@ public class CrueltyFreeAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return super.getView(position, convertView, parent);
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        convertView = inflater.inflate(R.layout.company_entry, parent, false);
+
+        TextView id = (TextView) convertView.findViewById(R.id.company_id);
+        ImageView image = (ImageView) convertView.findViewById(R.id.company_image);
+        TextView name = (TextView) convertView.findViewById(R.id.company_name);
+        TextView type = (TextView) convertView.findViewById(R.id.company_type);
+        TextView description = (TextView) convertView.findViewById(R.id.company_description);
+
+        CrueltyFreeModel company = data.get(position);
+        id.setText(String.valueOf(company.getId()));
+        image.setImageResource(company.getImage());
+
+
     }
 }

@@ -27,7 +27,7 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_CRUELTY_FREE = "CREATE TABLE " + TABLE_CRUELTYFREE
             + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " VARCHAR," + KEY_DESCRIPTION
             + " TEXT," + KEY_TYPE + " VARCHAR," + KEY_FAVOURITE + " INT," + KEY_IMAGE
-            + " TEXT" + ")";
+            + " INT" + ")";
 
     public CrueltyFreeDBHandler(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -62,7 +62,7 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
                 company.setName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
                 company.setDescription(cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)));
                 company.setType(cursor.getString(cursor.getColumnIndex(KEY_TYPE)));
-                company.setImage(cursor.getString(cursor.getColumnIndex(KEY_IMAGE)));
+                company.setImage(cursor.getInt(cursor.getColumnIndex(KEY_IMAGE)));
                 company.setFavourite(cursor.getInt(cursor.getColumnIndex(KEY_FAVOURITE)));
             } while (cursor.moveToNext());
         }
