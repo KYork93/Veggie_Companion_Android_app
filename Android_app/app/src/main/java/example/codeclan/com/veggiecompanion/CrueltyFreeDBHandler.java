@@ -1,8 +1,12 @@
 package example.codeclan.com.veggiecompanion;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by user on 22/03/2017.
@@ -41,5 +45,21 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public ArrayList<CrueltyFreeModel> getAllCrueltyFree(){
 
+        ArrayList<CrueltyFreeModel> companies = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_CRUELTYFREE;
+
+        Log.e("select all query", selectQuery);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                CrueltyFreeModel company = new CrueltyFreeModel();
+            }
+        }
+
+    }
 }

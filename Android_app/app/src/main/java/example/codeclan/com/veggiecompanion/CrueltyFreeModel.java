@@ -6,11 +6,14 @@ package example.codeclan.com.veggiecompanion;
 
 public class CrueltyFreeModel {
 
+    public int id;
     public String name;
     public String description;
     public String type;
     public boolean favourite;
     public String image;
+
+    public CrueltyFreeModel(){}
 
     public CrueltyFreeModel(String name, String description, String type, boolean favourite, String image) {
         this.name = name;
@@ -18,6 +21,23 @@ public class CrueltyFreeModel {
         this.type = type;
         this.favourite = favourite;
         this.image = image;
+    }
+
+    public CrueltyFreeModel(int id, String name, String description, String type, boolean favourite, String image) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.type = type;
+        this.favourite = favourite;
+        this.image = image;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
