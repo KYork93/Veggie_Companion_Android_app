@@ -3,15 +3,15 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cruelty Free Companies"
-        android:textSize="30sp"/>
+        android:layout_height="1000dp">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/cruelty_free_list"/>
+         <ListView
+             android:layout_width="match_parent"
+             android:layout_height="1000dp"
+             android:id="@+id/cruelty_free_list"/>
+
+    </ScrollView>
 
 </LinearLayout>
