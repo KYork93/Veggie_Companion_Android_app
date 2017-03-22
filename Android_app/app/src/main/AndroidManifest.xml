@@ -35,6 +35,9 @@
         <activity
             android:name=".FavouritesActivityPage">
         </activity>
+        <activity
+            android:name=".CrueltyFreeActivity">
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
