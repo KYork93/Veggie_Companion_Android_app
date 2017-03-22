@@ -10,12 +10,12 @@ public class CrueltyFreeModel {
     public String name;
     public String description;
     public String type;
-    public boolean favourite;
+    public int favourite;
     public String image;
 
     public CrueltyFreeModel(){}
 
-    public CrueltyFreeModel(String name, String description, String type, boolean favourite, String image) {
+    public CrueltyFreeModel(String name, String description, String type, int favourite, String image) {
         this.name = name;
         this.description = description;
         this.type = type;
@@ -23,7 +23,7 @@ public class CrueltyFreeModel {
         this.image = image;
     }
 
-    public CrueltyFreeModel(int id, String name, String description, String type, boolean favourite, String image) {
+    public CrueltyFreeModel(int id, String name, String description, String type, int favourite, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -64,11 +64,11 @@ public class CrueltyFreeModel {
         this.type = type;
     }
 
-    public boolean isFavourite() {
+    public int isFavourite() {
         return favourite;
     }
 
-    public void setFavourite(boolean favourite) {
+    public void setFavourite(int favourite) {
         this.favourite = favourite;
     }
 
