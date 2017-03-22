@@ -24,7 +24,7 @@
         android:id="@+id/rest_favourite"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:src="@android:drawable/btn_star_big_on"
+        android:src="@drawable/btn_star"
         android:background="#00ffffff"
         android:onClick="saveRestaurant" />
 
