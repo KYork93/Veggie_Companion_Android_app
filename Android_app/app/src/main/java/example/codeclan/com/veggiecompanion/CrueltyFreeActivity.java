@@ -48,7 +48,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     }
 
     public void addToTheCrueltyFreeDatabase(){
-        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this, 1);
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
         db.deleteAllCompanies();
 
         db.addToCrueltyFreeTable(nyx);
@@ -59,7 +59,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
 
     public void showAllCFCompanies(){
         addToTheCrueltyFreeDatabase();
-        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this, 1);
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
 
         ArrayList<CrueltyFreeModel> allCompanies = db.getAllCrueltyFree();
 
@@ -69,9 +69,8 @@ public class CrueltyFreeActivity extends AppCompatActivity{
         }
 
         companyList = (ListView) findViewById(R.id.cruelty_free_list);
-        CrueltyFreeAdapter adapter = new CrueltyFreeAdapter(this, R.id.company_name, allCompanies);
+        CrueltyFreeAdapter adapter = new CrueltyFreeAdapter(this, R.id.company_id, allCompanies);
         companyList.setAdapter(adapter);
-
     }
 
     @Override

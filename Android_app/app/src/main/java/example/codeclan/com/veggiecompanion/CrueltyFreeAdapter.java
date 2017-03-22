@@ -32,14 +32,16 @@ public class CrueltyFreeAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-        convertView = inflater.inflate(R.layout.company_entry, parent, false);
+        View row = convertView;
 
-        TextView id = (TextView) convertView.findViewById(R.id.company_id);
-        ImageView image = (ImageView) convertView.findViewById(R.id.company_image);
-        TextView name = (TextView) convertView.findViewById(R.id.company_name);
-        TextView type = (TextView) convertView.findViewById(R.id.company_type);
-        TextView description = (TextView) convertView.findViewById(R.id.company_description);
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        row = inflater.inflate(R.layout.company_entry, parent, false);
+
+        TextView id = (TextView) row.findViewById(R.id.company_id);
+        ImageView image = (ImageView) row.findViewById(R.id.company_image);
+        TextView name = (TextView) row.findViewById(R.id.company_name);
+        TextView type = (TextView) row.findViewById(R.id.company_type);
+        TextView description = (TextView) row.findViewById(R.id.company_description);
 
         CrueltyFreeModel company = data.get(position);
         id.setText(String.valueOf(company.getId()));
@@ -48,6 +50,6 @@ public class CrueltyFreeAdapter extends ArrayAdapter {
         type.setText(String.valueOf(company.getType()));
         description.setText(String.valueOf(company.getDescription()));
 
-        return convertView;
+        return row;
     }
 }
