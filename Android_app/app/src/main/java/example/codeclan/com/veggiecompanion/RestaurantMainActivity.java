@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +36,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     GoogleMap mGoogleMap;
     ListView restaurantList;
     Intent intent;
-    Button addToFav;
+    ImageButton addToFav;
 
     RestaurantModel ppalms = new RestaurantModel("Paradise Palms", "41 Lothian St, Edinburgh EH1 1HB", "Tropical house themed restaurant/cocktail bar with excellent vegan options, " +
                                                 "whole restaurant is vegetarian so you can be assured there's no kitchen contamination, " +
@@ -66,7 +67,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         }
         this.appendRestaurantsToView();
 
-        addToFav = (Button)findViewById(R.id.rest_favourite);
+        addToFav = (ImageButton)findViewById(R.id.rest_favourite);
 
         Log.d(getClass().toString(), "onCreate made");
     }

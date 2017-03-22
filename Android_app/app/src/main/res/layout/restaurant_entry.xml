@@ -19,10 +19,12 @@
         android:layout_height="match_parent"
         android:id="@+id/restaurant_description"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageButton
         android:id="@+id/rest_favourite"
-        android:onClick="saveRestaurant"/>
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:src="@android:drawable/btn_star"
+        android:background="#00ffffff"
+        android:onClick="saveRestaurant" />
 
 </LinearLayout>
