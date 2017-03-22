@@ -13,6 +13,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /**
  * Created by user on 22/03/2017.
@@ -43,7 +44,10 @@ public class CrueltyFreeAdapter extends ArrayAdapter {
         CrueltyFreeModel company = data.get(position);
         id.setText(String.valueOf(company.getId()));
         image.setImageResource(company.getImage());
+        name.setText(String.valueOf(company.getName()));
+        type.setText(String.valueOf(company.getType()));
+        description.setText(String.valueOf(company.getDescription()));
 
-
+        return convertView;
     }
 }
