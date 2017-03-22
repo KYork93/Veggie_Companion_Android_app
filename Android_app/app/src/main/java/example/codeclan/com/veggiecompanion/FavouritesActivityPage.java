@@ -67,7 +67,11 @@ public class FavouritesActivityPage extends AppCompatActivity{
         if(item.getItemId() == R.id.home){
             intent = new Intent(FavouritesActivityPage.this, RestaurantMainActivity.class);
             startActivity(intent);
+        } else if (item.getItemId() == R.id.crueltyfree_menu){
+            intent = new Intent(FavouritesActivityPage.this, CrueltyFreeActivity.class);
+            startActivity(intent);
         }
+
         return super.onOptionsItemSelected(item);
     }
 
