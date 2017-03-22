@@ -35,7 +35,6 @@ public class CrueltyFreeActivity extends AppCompatActivity{
             "with labels marking suitability for vegetarians and vegans.  All of their products are very " +
             "affordable and just as good as the brand names.", "cosmetics", 0, R.mipmap.super_drug_banner);
 
-
     ListView companyList;
     Intent intent;
 
@@ -48,7 +47,7 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     }
 
     public void addToTheCrueltyFreeDatabase(){
-        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(CrueltyFreeActivity.this);
         db.deleteAllCompanies();
 
         db.addToCrueltyFreeTable(nyx);
@@ -58,8 +57,8 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     }
 
     public void showAllCFCompanies(){
-        addToTheCrueltyFreeDatabase();
-        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
+        this.addToTheCrueltyFreeDatabase();
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(CrueltyFreeActivity.this);
 
         ArrayList<CrueltyFreeModel> allCompanies = db.getAllCrueltyFree();
 

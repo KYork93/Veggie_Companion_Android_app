@@ -58,7 +58,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(googleServicesAvailable()){
+        if (googleServicesAvailable()) {
             Toast.makeText(this, "Connected.", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.activity_restaurants_main);
             initMap();
@@ -67,9 +67,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
         }
         this.appendRestaurantsToView();
 
-        addToFav = (ImageButton)findViewById(R.id.rest_favourite);
-
-        Log.d(getClass().toString(), "onCreate made");
+        addToFav = (ImageButton) findViewById(R.id.rest_favourite);
     }
 
     private void initMap() {
