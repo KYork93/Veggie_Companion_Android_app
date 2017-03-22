@@ -1,5 +1,6 @@
 package example.codeclan.com.veggiecompanion;
 
+
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -50,7 +50,7 @@ public class RestaurantMainActivity extends AppCompatActivity implements OnMapRe
                                                    "and exciting dishes.", 0, 55.950563, -3.208798);
     RestaurantModel kalpna = new RestaurantModel("Kalpna", "2-3 St Patrick Square, EH8 9EZ", "A family run vegetarian Indian restaurant sourcing their ingredients locally. " +
                                                 "They have a passion for vegetarian and vegan lifestyle... Plus you can order to take out!", 0, 55.943451, -3.183052);
-    RestaurantModel nova = new RestaurantModel("Novapizza Vegetarian KItchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place " +
+    RestaurantModel nova = new RestaurantModel("Novapizza Vegetarian Kitchen", "42 Howe Street, EH3 6TH", "A favourite with students, and who doesn't love pizza?  This pizza place " +
                                                  "caters to the vegetarian and stocks vegan cheese!  It also has great gluten free options " +
                                                  "So Coeliacs can get on the Italian deliciousness.", 0, 55.956671, -3.202501);
 
