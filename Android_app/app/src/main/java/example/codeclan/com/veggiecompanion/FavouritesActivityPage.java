@@ -34,7 +34,6 @@ public class FavouritesActivityPage extends AppCompatActivity{
         setContentView(R.layout.favourite_activity);
 
         this.showFavouriteRestaurants();
-
     }
 
     public void showFavouriteRestaurants(){

@@ -20,8 +20,9 @@ public class CrueltyFreeActivity extends AppCompatActivity{
     Intent intent;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.cruelty_free_activity);
     }
 
     @Override
