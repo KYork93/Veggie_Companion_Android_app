@@ -11,14 +11,15 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:id="@+id/company_image"
         android:contentDescription="company Image"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/company_name"/>
+        android:id="@+id/company_name"
+        android:textSize="30sp"/>
 
     <TextView
         android:layout_width="match_parent"
