@@ -11,7 +11,10 @@ import org.junit.runner.RunWith;
 import example.codeclan.com.veggiecompanion.R;
 import example.codeclan.com.veggiecompanion.RestaurantMainActivity;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
@@ -42,4 +45,14 @@ public class RestaurantActivityInstrumentationTest {
     }
 
     @Test
+    public void checkListViewWIthFirstEntry(){
+        onView(withId(R.id.restaurant_list));
+    }
+
+    @Test
+    public void checkForMenu(){
+        openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
+
+        onView(withText("Home"));
+    }
 }

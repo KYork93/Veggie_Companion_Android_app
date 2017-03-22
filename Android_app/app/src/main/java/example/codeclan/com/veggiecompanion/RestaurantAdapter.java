@@ -44,6 +44,7 @@ public class RestaurantAdapter extends ArrayAdapter {
         TextView restDesc = (TextView)row.findViewById(R.id.restaurant_description);
 
         RestaurantModel restaurant = data.get(position);
+        id.setText(String.valueOf(restaurant.getId()));
         view.setText(String.valueOf(restaurant.getName()));
         restAddress.setText(String.valueOf(restaurant.getAddress()));
         restDesc.setText(restaurant.getDescription());
