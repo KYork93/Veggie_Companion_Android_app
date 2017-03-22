@@ -27,13 +27,13 @@ public class CrueltyFreeActivity extends AppCompatActivity{
             "for everyone here and the staff are friendly, often you can ask for take away samples." +
             "They have now also opened spas.", "cosmetics", 0, R.mipmap.lush_cosmetics_banner);
     CrueltyFreeModel ecover = new CrueltyFreeModel("Ecover", "This company produces household cleaning products from washing up liquid\n" +
-            "to bathroom cleaner using natural based products which will not harm the environment, no\n" +
-            "animal testing is involved they are stored in recycled plastic bottles and even the factory\n" +
-            "was build with ecology in mind.  To top it all of these products are available in most\n" +
-            "major supermarkets at inexpensive prices!", 0, R.id.ecover_banner);
+            "to bathroom cleaner using natural based products which will not harm the environment, no " +
+            "animal testing is involved they are stored in recycled plastic bottles and even the factory " +
+            "was build with ecology in mind.  To top it all of these products are available in most " +
+            "major supermarkets at inexpensive prices!", "household", 0, R.mipmap.ecover_banner);
     CrueltyFreeModel superdrug = new CrueltyFreeModel("Superdrug", "Superdrugs own products from toothpaste to their makeup brand B. are all cruelty free,\n" +
             "with labels marking suitability for vegetarians and vegans.  All of their products are very\n" +
-            "affordable and just as good as the brand names.", 0, R.id.superdrug.banner);
+            "affordable and just as good as the brand names.", "cosmetics", 0, R.mipmap.super_drug_banner);
 
 
     ListView companyList;
