@@ -49,7 +49,6 @@
                 android:layout_height="1000dp"
                 android:layout_below="@id/map_fragment" />
 
-
         </RelativeLayout>
 
     </ScrollView>

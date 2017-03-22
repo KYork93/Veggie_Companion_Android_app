@@ -37,6 +37,8 @@ public class RestaurantAdapter extends ArrayAdapter {
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         row = inflater.inflate(R.layout.restaurant_entry, parent, false);
 
+
+        TextView id = (TextView)row.findViewById(R.id.restaurant_id);
         TextView view = (TextView)row.findViewById(R.id.restaurant_name);
         TextView restAddress = (TextView)row.findViewById(R.id.restaurant_address);
         TextView restDesc = (TextView)row.findViewById(R.id.restaurant_description);

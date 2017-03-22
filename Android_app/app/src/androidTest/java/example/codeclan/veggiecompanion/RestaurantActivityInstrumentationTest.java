@@ -41,4 +41,5 @@ public class RestaurantActivityInstrumentationTest {
         withTagKey(R.string.google_map).matches(onView(withId(R.id.map_fragment)));
     }
 
+    @Test
 }
