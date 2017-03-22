@@ -47,7 +47,6 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
     }
 
     public void addToCrueltyFreeTable(CrueltyFreeModel company){
-
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
