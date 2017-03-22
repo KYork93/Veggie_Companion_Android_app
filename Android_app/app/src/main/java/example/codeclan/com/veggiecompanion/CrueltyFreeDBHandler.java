@@ -1,5 +1,6 @@
 package example.codeclan.com.veggiecompanion;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -41,6 +42,22 @@ public class CrueltyFreeDBHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CRUELTYFREE);
+
+        db.close();
+    }
+
+    public void addToCrueltyFreeTable(CrueltyFreeModel company){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_NAME, company.getName());
+        values.put(KEY_DESCRIPTION, company.getDescription());
+        values.put(KEY_TYPE, company.getType());
+        values.put(KEY_IMAGE, company.getImage());
+        values.put(KEY_FAVOURITE, company.getFavourite());
+
+        db.insert(TABLE_CRUELTYFREE, null, values);
 
         db.close();
     }

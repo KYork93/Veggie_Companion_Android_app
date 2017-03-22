@@ -64,7 +64,7 @@ public class CrueltyFreeModel {
         this.type = type;
     }
 
-    public int isFavourite() {
+    public int getFavourite() {
         return favourite;
     }
 

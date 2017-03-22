@@ -16,13 +16,24 @@ import android.widget.ListView;
 
 public class CrueltyFreeActivity extends AppCompatActivity{
 
-    ListView allCompanies;
+    ListView companyList;
     Intent intent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cruelty_free_activity);
+    }
+
+    public void addToTheCrueltyFreeDatabase(){
+        CrueltyFreeDBHandler db = new CrueltyFreeDBHandler(this);
+        db.deleteAllCompanies();
+
+
+    }
+
+    public void showAllCFCompanies(){
+
     }
 
     @Override

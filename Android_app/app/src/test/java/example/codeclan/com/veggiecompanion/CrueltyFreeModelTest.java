@@ -35,7 +35,7 @@ public class CrueltyFreeModelTest {
 
     @Test
     public void companyIsFavourite(){
-        assertEquals(true, crueltyFreeCompany.favourite);
+        assertEquals(1, crueltyFreeCompany.favourite);
     }
 
     @Test
